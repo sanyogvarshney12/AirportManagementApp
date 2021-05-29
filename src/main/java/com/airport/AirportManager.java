@@ -1,6 +1,7 @@
 package com.airport;
 
 import com.airport.constants.AirportType;
+import com.airport.logger.ApplicationLogger;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,14 +13,19 @@ import java.util.stream.Collectors;
  */
 public class AirportManager implements IAirportService{
 
+    private static final String className = AirportManager.class.getName();
+    private ApplicationLogger logger = new ApplicationLogger();
+    private static final String methodStartMsg = "***** Method Started *****";
+
     public AirportManager(){
 
     }
 
     public int listAllAirports(List<String> airports){
+        String methodName = "listAllAirports()";
+        logger.debug(className, methodName, methodStartMsg);
         List<String> smallAirports = airports.stream().filter(airport->smallAirport(airport))
                 .collect(Collectors.toList());
-        smallAirports.stream().forEach(System.out::println);
         List<String> largeAirports = airports.stream().filter(airport->largeAirport(airport))
                 .collect(Collectors.toList());
         List<String> mediumAirports = airports.stream().filter(airport->mediumAirport(airport))
@@ -35,12 +41,14 @@ public class AirportManager implements IAirportService{
 
         int totalAirports = smallAirports.size()+largeAirports.size()+mediumAirports.size()
                 +closed.size()+baloonAirports.size()+heliport.size()+seaplaneBase.size();
-        System.out.println("Total Airports found : "+totalAirports);
+        logger.debug(className, methodName, "For people who fly: {} and counting...", totalAirports);
         return totalAirports;
     }
 
-    public int findAirportByName() {
-        return 100;
+    public String findAirportByName(String name, List<String> airports) {
+        List<String> airportByName = airports.stream().filter(airport->airport.contains(name))
+                .collect(Collectors.toList());
+        return airportByName.get(0);
     }
 
     /**

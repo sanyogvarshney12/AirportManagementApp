@@ -8,8 +8,7 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 
 public class AirportManagerTest {
@@ -22,9 +21,12 @@ public class AirportManagerTest {
     public void init(){
         System.out.println("Executing before test");
         mockService = Mockito.mock(IAirportService.class);
-        mockAirports.add("38612,YTNC,small_airport,Tuncurry Airport,-32.150001525878906,152.48300170898438,,OC,AU,AU-NSW,,no,YTNC,,,,,");
-        mockAirports.add("38612,YTNC,small_airport,Tuncurry Airport,-32.150001525878906,152.48300170898438,,OC,AU,AU-NSW,,no,YTNC,,,,,");
-        mockAirports.add("38612,YTNC,small_airport,Tuncurry Airport,-32.150001525878906,152.48300170898438,,OC,AU,AU-NSW,,no,YTNC,,,,,");
+        mockAirports.add("323361,00AA,small_airport,Aero B Ranch Airport,38.704022,-101.473911,,NA,US,US-KS,Leoti,no,00AA,,,,,");
+        mockAirports.add("322658,00CN,heliport,Kitchen Creek Helibase Heliport,32.7273736,-116.4597417,3350,NA,US,US-CA,Pine Valley,no,00CN,,,,,");
+        mockAirports.add("329666,CN-0083,large_airport,Guodu Air Base,36.001741,117.63201,,AS,CN,CN-37,Xintai, Tai'an,no,,,,,,");
+        mockAirports.add("32753,ZYYY,medium_airport,Shenyang Dongta Airport,41.784401,123.496002,,AS,CN,CN-21,Dadong, Shenyang,no,ZYYY,,,,,");
+        mockAirports.add("342102,ZZZW,closed,Scandium City Heliport,69.355287,-138.93931,4,NA,CA,CA-YT,(Old) Scandium City,no,ZZZW,ZYW,YK96,,,");
+        mockAirports.add("26363,Z87,seaplane_base,Blinn Lake Seaplane Base,55.2515983581543,-162.7530059814453,50,NA,US,US-AK,Cold Bay,no,Z87,,Z87,,,");
     }
 
     @After
@@ -35,7 +37,7 @@ public class AirportManagerTest {
     @Test
     public void testListAllAirports(){
         IAirportService manager = new AirportManager();
-        int expected = 3;
+        int expected = 6;
         int actual = manager.listAllAirports(mockAirports);
         assertEquals(expected, actual);
     }
@@ -43,9 +45,8 @@ public class AirportManagerTest {
     @Test
     public void testFindAirportsByName() {
         AirportManager manager = new AirportManager();
-        int expected = 3;
-        int actual = manager.findAirportByName();
-        assertEquals(expected, actual);
+        String actual = manager.findAirportByName("Shenyang Dongta Airport", mockAirports);
+        assertNotNull(actual);
     }
 
     @Test

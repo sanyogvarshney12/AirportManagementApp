@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.airport.AirportManagerTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 14, Errors: 0, Skipped: 0, Time elapsed: 0.452 sec <<< FAILURE!
-testListCountries(com.airport.AirportManagerTest)  Time elapsed: 0.29 sec  <<< FAILURE!
+Tests run: 15, Failures: 13, Errors: 0, Skipped: 0, Time elapsed: 0.398 sec <<< FAILURE!
+testListCountries(com.airport.AirportManagerTest)  Time elapsed: 0.255 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListCountries(AirportManagerTest.java:97)
+	at com.airport.AirportManagerTest.testListCountries(AirportManagerTest.java:98)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -38,10 +38,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testGetRandomAirport(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testGetRandomAirport(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testGetRandomAirport(AirportManagerTest.java:93)
+	at com.airport.AirportManagerTest.testGetRandomAirport(AirportManagerTest.java:94)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,7 +77,7 @@ java.lang.AssertionError: Not Yet Impemented
 testLogin(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testLogin(AirportManagerTest.java:107)
+	at com.airport.AirportManagerTest.testLogin(AirportManagerTest.java:108)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -113,7 +113,7 @@ java.lang.AssertionError: Not Yet Impemented
 testListAllRegions(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListAllRegions(AirportManagerTest.java:78)
+	at com.airport.AirportManagerTest.testListAllRegions(AirportManagerTest.java:79)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,10 +146,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListAllNavaids(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testListAllNavaids(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListAllNavaids(AirportManagerTest.java:83)
+	at com.airport.AirportManagerTest.testListAllNavaids(AirportManagerTest.java:84)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,46 +185,7 @@ java.lang.AssertionError: Not Yet Impemented
 testListAll(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListAll(AirportManagerTest.java:88)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-
-testFindAirportsByName(com.airport.AirportManagerTest)  Time elapsed: 0.004 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<3> but was:<100>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at com.airport.AirportManagerTest.testFindAirportsByName(AirportManagerTest.java:48)
+	at com.airport.AirportManagerTest.testListAll(AirportManagerTest.java:89)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -260,7 +221,7 @@ java.lang.AssertionError: expected:<3> but was:<100>
 testFindAirportsBySize(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsBySize(AirportManagerTest.java:58)
+	at com.airport.AirportManagerTest.testFindAirportsBySize(AirportManagerTest.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -296,7 +257,7 @@ java.lang.AssertionError: Not Yet Impemented
 testFindAirportsByCountry(com.airport.AirportManagerTest)  Time elapsed: 0.003 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsByCountry(AirportManagerTest.java:53)
+	at com.airport.AirportManagerTest.testFindAirportsByCountry(AirportManagerTest.java:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -329,10 +290,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindHelipads(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testFindHelipads(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindHelipads(AirportManagerTest.java:68)
+	at com.airport.AirportManagerTest.testFindHelipads(AirportManagerTest.java:69)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -365,10 +326,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsByRunways(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testFindAirportsByRunways(com.airport.AirportManagerTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsByRunways(AirportManagerTest.java:63)
+	at com.airport.AirportManagerTest.testFindAirportsByRunways(AirportManagerTest.java:64)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -401,10 +362,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListContinents(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testListContinents(com.airport.AirportManagerTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListContinents(AirportManagerTest.java:102)
+	at com.airport.AirportManagerTest.testListContinents(AirportManagerTest.java:103)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -437,10 +398,10 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsByContinent(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testFindAirportsByContinent(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsByContinent(AirportManagerTest.java:73)
+	at com.airport.AirportManagerTest.testFindAirportsByContinent(AirportManagerTest.java:74)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -476,7 +437,7 @@ java.lang.AssertionError: Not Yet Impemented
 testSignup(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testSignup(AirportManagerTest.java:112)
+	at com.airport.AirportManagerTest.testSignup(AirportManagerTest.java:113)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
