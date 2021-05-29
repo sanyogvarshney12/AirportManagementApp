@@ -45,6 +45,7 @@ public class AirportManagerTest {
         AirportManager manager = new AirportManager();
         int expected = 3;
         int actual = manager.findAirportByName();
+        assertEquals(expected, actual);
     }
 
     @Test
