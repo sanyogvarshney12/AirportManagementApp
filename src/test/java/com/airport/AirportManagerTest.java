@@ -1,5 +1,6 @@
 package com.airport;
 
+import com.airport.exception.NoHeliportFoundException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +17,7 @@ public class AirportManagerTest {
 
     IAirportService mockService;
     List<String> mockAirports = new ArrayList<>();
+    List<String> emptyAirports = new ArrayList<>();
 
 
     @Before
@@ -80,7 +82,17 @@ public class AirportManagerTest {
 
     @Test
     public void testFindHelipads() {
-        fail("Not Yet Impemented");
+        IAirportService manager = new AirportManagerImpl();
+        long expected = 1;
+        long actual = manager.findHelipads(mockAirports);
+        assertEquals(expected,actual);
+    }
+
+    @Test(expected = NoHeliportFoundException.class)
+    public void testFindHelipads_Exception() {
+        IAirportService manager = new AirportManagerImpl();
+        long expected = 100;
+        long actual = manager.findHelipads(emptyAirports);
     }
 
     @Test

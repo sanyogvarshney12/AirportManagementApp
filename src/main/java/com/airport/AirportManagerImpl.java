@@ -1,12 +1,14 @@
 package com.airport;
 
 import com.airport.constants.AirportType;
+import com.airport.exception.NoHeliportFoundException;
 import com.airport.logger.ApplicationLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.LogManager;
 import java.util.stream.Collectors;
 
@@ -73,11 +75,6 @@ public class AirportManagerImpl implements IAirportService{
         return airportByCountry;
     }
 
-    public List<String> findAirportByAirlines() {
-        List<String> list = new ArrayList<>();
-        return list;
-    }
-
     public List<String> findAirportByType(String type, List<String> airports) {
         String methodName = "findAirportByType()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -88,31 +85,43 @@ public class AirportManagerImpl implements IAirportService{
         return airportByType;
     }
 
-    public boolean smallAirport(String airport){
+    public long findHelipads(List<String> airports) {
+        String methodName = "findHelipads()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> helipadsList = airports.stream().filter(AirportManagerImpl::heliport)
+                .collect(Collectors.toList());
+        long size = helipadsList.stream().findAny()
+                .orElseThrow(()-> new NoHeliportFoundException("No Heliports found in the system.")).lines().count();
+        logger.debug(CLASSNAME, methodName, "Number of Heliports found : {}", size);
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return size;
+    }
+
+    public static boolean smallAirport(String airport){
         return airport.contains(AirportType.SMALLAIRPORT.getValue());
     }
 
-    public boolean largeAirport(String airport){
+    public static boolean largeAirport(String airport){
         return airport.contains(AirportType.LARGEAIRPORT.getValue());
     }
 
-    public boolean mediumAirport(String airport){
+    public static boolean mediumAirport(String airport){
         return airport.contains(AirportType.MEDIUMAIRPORT.getValue());
     }
 
-    public boolean baloonAirport(String airport){
+    public static boolean baloonAirport(String airport){
         return airport.contains(AirportType.BALOONAIRPORT.getValue());
     }
 
-    public boolean heliport(String airport){
+    public static boolean heliport(String airport){
         return airport.contains(AirportType.HELIPORT.getValue());
     }
 
-    public boolean closed(String airport){
+    public static boolean closed(String airport){
         return airport.contains(AirportType.CLOSED.getValue());
     }
 
-    public boolean seaplaneBase(String airport){
+    public static boolean seaplaneBase(String airport){
         return airport.contains(AirportType.SEAPLANEBASE.getValue());
     }
 }

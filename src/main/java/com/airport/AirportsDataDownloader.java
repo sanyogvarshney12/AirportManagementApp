@@ -9,9 +9,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AirportsDataDownloader {
 //Using Java11 features
@@ -37,6 +40,12 @@ public class AirportsDataDownloader {
             airports.add(line.replace("\"", ""));
         }
         return airports;
+    }
+
+    public static List<String> readRunwaysData() throws IOException {
+        List<String> list = Files.readString(Paths.get("..\\Users\\sanyo\\Desktop\\airportData\\runways.csv"))
+                .lines().collect(Collectors.toList());
+        return list;
     }
 
 }
