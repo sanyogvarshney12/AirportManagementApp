@@ -7,6 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -131,8 +134,12 @@ public class AirportManagerTest {
         fail("Not Yet Impemented");
     }
     @Test
-    public void testListCountries() {
-        fail("Not Yet Impemented");
+    public void testListCountries() throws IOException {
+        IAirportService manager = new AirportManagerImpl();
+        Object[] expected = Files.readAllLines(Paths
+                .get("C:\\Users\\sanyo\\Desktop\\airportData\\countries.csv")).toArray();
+        Object[] actual = manager.listCountries().toArray();
+        assertArrayEquals(expected, actual);
     }
 
     @Test

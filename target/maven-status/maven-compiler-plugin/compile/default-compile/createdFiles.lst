@@ -1,3 +1,4 @@
+com\airport\exception\NoAirportsFoundForContinentException.class
 com\airport\helper\PropertyHelper.class
 com\airport\AirportsDataDownloader.class
 com\airport\exception\NoHeliportFoundException.class

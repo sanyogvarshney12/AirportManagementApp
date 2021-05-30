@@ -7,6 +7,9 @@ import com.airport.logger.ApplicationLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -104,10 +107,33 @@ public class AirportManagerImpl implements IAirportService{
         List<String> airportByContinent = airports.stream().filter(airport->airport.contains(continent))
                 .collect(Collectors.toList());
         airportByContinent.stream().findAny()
-                .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"));
+                .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
+                .lines().count();
         logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByContinent);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByContinent;
+    }
+
+    @Override
+    public List<String> listContinents(List<String> continents) {
+        return null;
+    }
+
+    @Override
+    public List<String> listCountries() throws IOException {
+        String methodName = "listCountries()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> countriesList = Files.readString(Paths
+                .get("C:\\Users\\sanyo\\Desktop\\airportData\\countries.csv"))
+                .lines().collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Total Countries : {}", countriesList.size());
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return countriesList;
+    }
+
+    @Override
+    public List<String> listNavaids(List<String> navaids) {
+        return null;
     }
 
     public static boolean smallAirport(String airport){
