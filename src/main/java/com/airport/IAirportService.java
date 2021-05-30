@@ -14,6 +14,6 @@ public interface IAirportService {
     public List<String> listContinents() throws IOException;
     public List<String> listCountries() throws IOException;
     public List<String> listAllRegions() throws IOException;
-    public List<String> listNavaids(List<String> navaids);
+    public List<String> listNavaids() throws IOException;
 
 }

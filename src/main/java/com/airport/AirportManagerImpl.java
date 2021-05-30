@@ -123,7 +123,7 @@ public class AirportManagerImpl implements IAirportService{
                 .lines().collect(Collectors.toList());
         countriesList.remove(0);
         List<String> continentList = countriesList.stream().map(s-> splitContinents(s)).distinct().sorted().collect(Collectors.toList());
-        logger.debug(CLASSNAME, methodName, "Total Countries : {}", continentList.size());
+        logger.debug(CLASSNAME, methodName, "Total Continents : {}", continentList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return continentList;
     }
@@ -145,14 +145,20 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> regionList = Files.readString(Paths.get("C:\\Users\\sanyo\\Desktop\\airportData\\regions.csv"))
                 .lines().collect(Collectors.toList());
-        logger.debug(CLASSNAME, methodName, "Total Countries : {}", regionList.size());
+        logger.debug(CLASSNAME, methodName, "Total Regions : {}", regionList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return regionList;
     }
 
     @Override
-    public List<String> listNavaids(List<String> navaids) {
-        return null;
+    public List<String> listNavaids() throws IOException {
+        String methodName = "listNavaids()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> navaidsList = Files.readString(Paths.get("C:\\Users\\sanyo\\Desktop\\airportData\\navaids.csv"))
+                .lines().collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Total Navigation Aids : {}", navaidsList.size());
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return navaidsList;
     }
 
     public static boolean smallAirport(String airport){
