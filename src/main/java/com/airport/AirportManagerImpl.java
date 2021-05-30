@@ -115,8 +115,17 @@ public class AirportManagerImpl implements IAirportService{
     }
 
     @Override
-    public List<String> listContinents(List<String> continents) {
-        return null;
+    public List<String> listContinents() throws IOException {
+        String methodName = "listContinents()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> countriesList = Files.readString(Paths
+                .get("C:\\Users\\sanyo\\Desktop\\airportData\\countries.csv"))
+                .lines().collect(Collectors.toList());
+        countriesList.remove(0);
+        List<String> continentList = countriesList.stream().map(s-> splitContinents(s)).distinct().sorted().collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Total Countries : {}", continentList.size());
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return continentList;
     }
 
     @Override
@@ -162,5 +171,10 @@ public class AirportManagerImpl implements IAirportService{
 
     public static boolean seaplaneBase(String airport){
         return airport.contains(AirportType.SEAPLANEBASE.getValue());
+    }
+
+    public static String splitContinents(String s){
+        String[] arr = s.split(",");
+        return arr[3].replace("\"", "");
     }
 }

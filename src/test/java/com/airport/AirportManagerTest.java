@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,14 +21,17 @@ import static org.junit.Assert.*;
 public class AirportManagerTest {
 
     IAirportService mockService;
-    List<String> mockAirports = new ArrayList<>();
-    List<String> emptyAirports = new ArrayList<>();
-
+    List<String> mockAirports;
+    List<String> emptyAirports;
+    List<String> continentsList;
 
     @Before
     public void init(){
         System.out.println("Executing before test");
         mockService = Mockito.mock(IAirportService.class);
+        mockAirports = new ArrayList<>();
+        emptyAirports = new ArrayList<>();
+        continentsList = Arrays.asList("AF", "AN", "AS", "EU", "NA", "OC", "SA");
         mockAirports.add("323361,00AA,small_airport,Aero B Ranch Airport,38.704022,-101.473911,,NA,US,US-KS,Leoti,no,00AA,,,,,");
         mockAirports.add("322658,00CN,heliport,Kitchen Creek Helibase Heliport,32.7273736,-116.4597417,3350,NA,US,US-CA,Pine Valley,no,00CN,,,,,");
         mockAirports.add("329666,CN-0083,large_airport,Guodu Air Base,36.001741,117.63201,,AS,CN,CN-37,Xintai, Tai'an,no,,,,,,");
@@ -143,8 +147,11 @@ public class AirportManagerTest {
     }
 
     @Test
-    public void testListContinents() {
-        fail("Not Yet Impemented");
+    public void testListContinents() throws IOException {
+        IAirportService manage = new AirportManagerImpl();
+        Object[] expected = continentsList.toArray();
+        Object[] actual = manage.listContinents().toArray();
+        assertArrayEquals(expected, actual);
     }
 
     @Test

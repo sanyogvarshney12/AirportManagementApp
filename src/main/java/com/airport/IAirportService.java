@@ -11,7 +11,7 @@ public interface IAirportService {
     public List<String> findAirportByType(String type, List<String> airports);
     public long findHelipads(List<String> airports);
     public List<String> findAirportsByContinent(String continent, List<String> airports);
-    public List<String> listContinents(List<String> continents);
+    public List<String> listContinents() throws IOException;
     public List<String> listCountries() throws IOException;
     public List<String> listNavaids(List<String> navaids);
 
