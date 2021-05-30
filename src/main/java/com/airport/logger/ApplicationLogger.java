@@ -11,18 +11,18 @@ import org.slf4j.LoggerFactory;
  */
 public class ApplicationLogger {
 
-    private Logger LOGGER = LoggerFactory.getLogger(ApplicationLogger.class);
+    private final Logger logger = LoggerFactory.getLogger(ApplicationLogger.class);
 
     public void debug(String className, String methodName, String msg) {
-        LOGGER.debug("CLASSNAME : {} :: METHODNAME : {} :: {}", className, methodName, msg);
+        logger.debug("CLASSNAME : {} :: METHODNAME : {} :: {}", className, methodName, msg);
     }
 
     public void debug(String className, String methodName, String msg, Object obj) {
-        LOGGER.debug("CLASSNAME : {} :: METHODNAME : {}  :: {} {}", className, methodName, msg, obj);
+        logger.debug("CLASSNAME : {} :: METHODNAME : {}  :: {} {}", className, methodName, msg, obj);
     }
 
     public void error(String msg, Throwable e) {
-        LOGGER.error(msg, e);
+        logger.error(msg, e);
     }
 
 }

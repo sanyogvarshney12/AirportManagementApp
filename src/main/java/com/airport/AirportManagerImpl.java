@@ -82,9 +82,7 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> helipadsList = airports.stream().filter(AirportManagerImpl::heliport)
                 .collect(Collectors.toList());
-        //long size = helipadsList.stream().findAny()
-                //.orElseThrow(()-> new NoHeliportFoundException("No Heliports found in the system.")).lines().count();
-        if(helipadsList.size() == 0){
+        if(helipadsList.isEmpty()){
             throw new NoHeliportFoundException("No Heliports found in the system.");
         }
         long size = helipadsList.size();
@@ -97,10 +95,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "findAirportsByContinent()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByContinent = getListByFunction(airports, continent);
-        //airportByContinent.stream().findAny()
-        //        .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
-        //        .lines().count();
-        if(airportByContinent.size() == 0){
+        if(airportByContinent.isEmpty()){
             throw new NoAirportsFoundForContinentException("No Airport found for this Continent");
         }
         logger.debug(CLASSNAME, methodName, "Airport Details by Continents : {}", airportByContinent);

@@ -49,7 +49,7 @@ public class AirportManagerTest {
     @Test
     public void testListAllAirports() throws IOException, URISyntaxException, InterruptedException {
         IAirportService manager = new AirportManagerImpl();
-        int expected = 65537;
+        int expected = 65562;
         int actual = manager.listAllAirports();
         assertEquals(expected, actual);
     }
