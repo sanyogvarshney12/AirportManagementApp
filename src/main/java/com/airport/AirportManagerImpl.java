@@ -1,6 +1,7 @@
 package com.airport;
 
 import com.airport.constants.AirportType;
+import com.airport.exception.NoAirportsFoundForContinentException;
 import com.airport.exception.NoHeliportFoundException;
 import com.airport.logger.ApplicationLogger;
 import org.slf4j.Logger;
@@ -95,6 +96,18 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, "Number of Heliports found : {}", size);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return size;
+    }
+
+    public List<String> findAirportsByContinent(String continent, List<String> airports) {
+        String methodName = "findAirportsByContinent()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> airportByContinent = airports.stream().filter(airport->airport.contains(continent))
+                .collect(Collectors.toList());
+        airportByContinent.stream().findAny()
+                .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"));
+        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByContinent);
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return airportByContinent;
     }
 
     public static boolean smallAirport(String airport){

@@ -1,5 +1,6 @@
 package com.airport;
 
+import com.airport.exception.NoAirportsFoundForContinentException;
 import com.airport.exception.NoHeliportFoundException;
 import org.junit.After;
 import org.junit.Before;
@@ -97,7 +98,17 @@ public class AirportManagerTest {
 
     @Test
     public void testFindAirportsByContinent() {
-        fail("Not Yet Impemented");
+        IAirportService manager = new AirportManagerImpl();
+        Object[] expected = mockAirports.stream().filter(s->s.contains("AF")).toArray();
+        Object[] actual = manager.findAirportsByContinent("AF", mockAirports).toArray();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NoAirportsFoundForContinentException.class)
+    public void testFindAirportsByContinent_Exception() {
+        IAirportService manager = new AirportManagerImpl();
+        Object[] expected = mockAirports.stream().filter(s->s.contains("AF")).toArray();
+        Object[] actual = manager.findAirportsByContinent("AF", mockAirports).toArray();
     }
 
     @Test

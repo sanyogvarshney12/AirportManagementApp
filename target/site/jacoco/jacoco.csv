@@ -1,6 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-AirportManagementApp,com.airport,AirportManagerImpl,6,298,0,0,2,53,1,23,1,23
-AirportManagementApp,com.airport,AirportsDataDownloader,62,0,2,0,17,0,4,0,3,0
+AirportManagementApp,com.airport.exception,NoHeliportFoundException,0,4,0,0,0,2,0,1,0,1
+AirportManagementApp,com.airport,AirportManagerImpl,0,330,0,0,0,62,0,25,0,25
+AirportManagementApp,com.airport,AirportsDataDownloader,74,0,2,0,20,0,5,0,4,0
 AirportManagementApp,com.airport.logger,ApplicationLogger,0,24,0,0,0,6,0,3,0,3
 AirportManagementApp,com.airport.constants,AirportType,0,92,0,0,0,12,0,3,0,3
 AirportManagementApp,com.airport.helper,PropertyHelper,25,0,2,0,11,0,3,0,2,0
