@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -36,7 +37,7 @@ public class AirportManagerTest {
 
     @Test
     public void testListAllAirports(){
-        IAirportService manager = new AirportManager();
+        IAirportService manager = new AirportManagerImpl();
         int expected = 6;
         int actual = manager.listAllAirports(mockAirports);
         assertEquals(expected, actual);
@@ -44,14 +45,27 @@ public class AirportManagerTest {
 
     @Test
     public void testFindAirportsByName() {
-        AirportManager manager = new AirportManager();
+        AirportManagerImpl manager = new AirportManagerImpl();
         String actual = manager.findAirportByName("Shenyang Dongta Airport", mockAirports);
         assertNotNull(actual);
     }
 
     @Test
     public void testFindAirportsByCountry() {
-        fail("Not Yet Impemented");
+        AirportManagerImpl manager = new AirportManagerImpl();
+        Object[] expected = mockAirports.stream().filter(a->a.contains("US"))
+                .collect(Collectors.toList()).toArray();
+        Object[] actual = manager.findAirportByCountry("US", mockAirports).toArray();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testFindAirportsByType(){
+        IAirportService manager = new AirportManagerImpl();
+        Object[] expected = mockAirports.stream().filter(a->a.contains("heliport"))
+                .collect(Collectors.toList()).toArray();
+        Object[] actual = manager.findAirportByType("heliport", mockAirports).toArray();
+        assertArrayEquals(expected, actual);
     }
 
     @Test

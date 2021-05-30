@@ -2,8 +2,12 @@ package com.airport;
 
 import com.airport.constants.AirportType;
 import com.airport.logger.ApplicationLogger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.LogManager;
 import java.util.stream.Collectors;
 
 /**
@@ -11,19 +15,18 @@ import java.util.stream.Collectors;
  * @since 1.0
  * @version 1.0
  */
-public class AirportManager implements IAirportService{
+public class AirportManagerImpl implements IAirportService{
 
-    private static final String className = AirportManager.class.getName();
+    private static final String CLASSNAME = AirportManagerImpl.class.getName();
+    private static final Logger log = LoggerFactory.getLogger(AirportManagerImpl.class);
     private ApplicationLogger logger = new ApplicationLogger();
-    private static final String methodStartMsg = "***** Method Started *****";
+    private static final String METHODSTARTMSG = "***** Method Started *****";
+    private static final String METHODENDMSG = "***** Method Ended *****";
 
-    public AirportManager(){
-
-    }
 
     public int listAllAirports(List<String> airports){
         String methodName = "listAllAirports()";
-        logger.debug(className, methodName, methodStartMsg);
+        log.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> smallAirports = airports.stream().filter(airport->smallAirport(airport))
                 .collect(Collectors.toList());
         List<String> largeAirports = airports.stream().filter(airport->largeAirport(airport))
@@ -41,13 +44,18 @@ public class AirportManager implements IAirportService{
 
         int totalAirports = smallAirports.size()+largeAirports.size()+mediumAirports.size()
                 +closed.size()+baloonAirports.size()+heliport.size()+seaplaneBase.size();
-        logger.debug(className, methodName, "For people who fly: {} and counting...", totalAirports);
+        logger.debug(CLASSNAME, methodName, "For people who fly: {} and counting...", totalAirports);
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return totalAirports;
     }
 
     public String findAirportByName(String name, List<String> airports) {
+        String methodName = "findAirportByName()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByName = airports.stream().filter(airport->airport.contains(name))
                 .collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByName.get(0));
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByName.get(0);
     }
 
@@ -55,16 +63,29 @@ public class AirportManager implements IAirportService{
      *
      * @return
      */
-    public int findAirportByCountry() {
-        return 100;
+    public List<String> findAirportByCountry(String country, List<String> airports) {
+        String methodName = "findAirportByCountry()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> airportByCountry = airports.stream().filter(airport->airport.contains(country))
+                .collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByCountry);
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return airportByCountry;
     }
 
-    public int findAirportByAirlines() {
-        return 100;
+    public List<String> findAirportByAirlines() {
+        List<String> list = new ArrayList<>();
+        return list;
     }
 
-    public int findAirportByType() {
-        return 100;
+    public List<String> findAirportByType(String type, List<String> airports) {
+        String methodName = "findAirportByType()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> airportByType = airports.stream().filter(airport->airport.contains(type))
+                .collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByType);
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return airportByType;
     }
 
     public boolean smallAirport(String airport){

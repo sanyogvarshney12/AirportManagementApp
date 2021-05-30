@@ -3,4 +3,4 @@ com\airport\AirportsDataDownloader.class
 com\airport\IAirportService.class
 com\airport\logger\ApplicationLogger.class
 com\airport\constants\AirportType.class
-com\airport\AirportManager.class
+com\airport\AirportManagerImpl.class
