@@ -106,8 +106,8 @@ public class AirportManagerTest {
     @Test
     public void testFindAirportsByContinent() {
         IAirportService manager = new AirportManagerImpl();
-        Object[] expected = mockAirports.stream().filter(s->s.contains("AF")).toArray();
-        Object[] actual = manager.findAirportsByContinent("AF", mockAirports).toArray();
+        Object[] expected = mockAirports.stream().filter(s->s.contains("NA")).toArray();
+        Object[] actual = manager.findAirportsByContinent("NA", mockAirports).toArray();
         assertArrayEquals(expected, actual);
     }
 

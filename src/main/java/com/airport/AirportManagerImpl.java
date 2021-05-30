@@ -55,8 +55,7 @@ public class AirportManagerImpl implements IAirportService{
     public String findAirportByName(String name, List<String> airports) {
         String methodName = "findAirportByName()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> airportByName = airports.stream().filter(airport->airport.contains(name))
-                .collect(Collectors.toList());
+        List<String> airportByName = getListByFunction(airports, name);
         logger.debug(CLASSNAME, methodName, "Airport Details by Name : {}", airportByName.get(0));
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByName.get(0);
@@ -69,8 +68,7 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> findAirportByCountry(String country, List<String> airports) {
         String methodName = "findAirportByCountry()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> airportByCountry = airports.stream().filter(airport->airport.contains(country))
-                .collect(Collectors.toList());
+        List<String> airportByCountry = getListByFunction(airports, country);
         logger.debug(CLASSNAME, methodName, "Airport Details by Country : {}", airportByCountry);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByCountry;
@@ -79,8 +77,7 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> findAirportByType(String type, List<String> airports) {
         String methodName = "findAirportByType()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> airportByType = airports.stream().filter(airport->airport.contains(type))
-                .collect(Collectors.toList());
+        List<String> airportByType = getListByFunction(airports, type);
         logger.debug(CLASSNAME, methodName, "Airport Details by Type : {}", airportByType);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByType;
@@ -101,8 +98,7 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> findAirportsByContinent(String continent, List<String> airports) {
         String methodName = "findAirportsByContinent()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> airportByContinent = airports.stream().filter(airport->airport.contains(continent))
-                .collect(Collectors.toList());
+        List<String> airportByContinent = getListByFunction(airports, continent);
         airportByContinent.stream().findAny()
                 .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
                 .lines().count();
@@ -189,5 +185,11 @@ public class AirportManagerImpl implements IAirportService{
     public static String splitContinents(String s){
         String[] arr = s.split(",");
         return arr[3].replace("\"", "");
+    }
+
+    public List<String> getListByFunction(List<String> airports, String function) {
+        List<String> list = airports.stream().filter(airport->airport.contains(function))
+                .collect(Collectors.toList());
+        return list;
     }
 }
