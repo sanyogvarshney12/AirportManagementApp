@@ -5,6 +5,12 @@ import com.airport.logger.ApplicationLogger;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author Sanyog Varshney
+ * @since 1.0
+ * @version 1.0
+ * @implNote utility class
+ */
 public class PropertyHelper {
     private static final Properties properties = new Properties();
     private static final String CLASSNAME = PropertyHelper.class.getName();

@@ -37,6 +37,13 @@ public class AirportManagerImpl implements IAirportService{
     private static final String METHODENDMSG = "***** Method Ended *****";
 
 
+    /**
+     *
+     * @return int
+     * @throws IOException
+     * @throws URISyntaxException
+     * @throws InterruptedException
+     */
     public int listAllAirports() throws IOException, URISyntaxException, InterruptedException {
         String methodName = "listAllAirports()";
         log.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -46,6 +53,12 @@ public class AirportManagerImpl implements IAirportService{
         return totalAirports;
     }
 
+    /**
+     *
+     * @param name
+     * @param airports
+     * @return String
+     */
     public String findAirportByName(String name, List<String> airports) {
         String methodName = "findAirportByName()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -57,7 +70,9 @@ public class AirportManagerImpl implements IAirportService{
 
     /**
      *
-     * @return
+     * @param country
+     * @param airports
+     * @return List
      */
     public List<String> findAirportByCountry(String country, List<String> airports) {
         String methodName = "findAirportByCountry()";
@@ -68,6 +83,12 @@ public class AirportManagerImpl implements IAirportService{
         return airportByCountry;
     }
 
+    /**
+     *
+     * @param type
+     * @param airports
+     * @return List
+     */
     public List<String> findAirportByType(String type, List<String> airports) {
         String methodName = "findAirportByType()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -77,6 +98,11 @@ public class AirportManagerImpl implements IAirportService{
         return airportByType;
     }
 
+    /**
+     *
+     * @param airports
+     * @return long
+     */
     public long findHelipads(List<String> airports) {
         String methodName = "findHelipads()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -91,6 +117,12 @@ public class AirportManagerImpl implements IAirportService{
         return size;
     }
 
+    /**
+     *
+     * @param continent
+     * @param airports
+     * @return List
+     */
     public List<String> findAirportsByContinent(String continent, List<String> airports) {
         String methodName = "findAirportsByContinent()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -103,6 +135,11 @@ public class AirportManagerImpl implements IAirportService{
         return airportByContinent;
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List<String> listContinents() throws IOException {
         String methodName = "listContinents()";
@@ -117,6 +154,11 @@ public class AirportManagerImpl implements IAirportService{
         return continentList;
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List<String> listCountries() throws IOException {
         String methodName = "listCountries()";
@@ -129,6 +171,11 @@ public class AirportManagerImpl implements IAirportService{
         return countriesList;
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     public List<String> listAllRegions() throws IOException {
         String methodName = "listAllRegions()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
@@ -140,6 +187,11 @@ public class AirportManagerImpl implements IAirportService{
         return regionList;
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List<String> listNavaids() throws IOException {
         String methodName = "listNavaids()";
@@ -152,20 +204,43 @@ public class AirportManagerImpl implements IAirportService{
         return navaidsList;
     }
 
+    /**
+     *
+     * @param airport
+     * @return boolean
+     */
     public static boolean heliport(String airport){
         return airport.contains(AirportType.HELIPORT.getValue());
     }
 
+    /**
+     *
+     * @param s
+     * @return String
+     */
     public static String splitContinents(String s){
         String[] arr = s.split(",");
         return arr[3].replace("\"", "");
     }
 
+    /**
+     *
+     * @param airports
+     * @param function
+     * @return List
+     */
     public List<String> getListByFunction(List<String> airports, String function) {
         return airports.stream().filter(airport->airport.contains(function))
                 .collect(Collectors.toList());
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     * @throws URISyntaxException
+     * @throws InterruptedException
+     */
     public static List<String> readAirportData() throws IOException, URISyntaxException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty("AIRPORTS_CSV_LOCATION")))
                 .GET()

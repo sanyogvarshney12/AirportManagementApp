@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
+/**
+ * @author Sanyog Varshney
+ * @since 1.0
+ * @version 1.0
+ */
 public interface IAirportService {
 
     public int listAllAirports() throws IOException, URISyntaxException, InterruptedException;

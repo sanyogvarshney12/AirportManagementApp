@@ -19,12 +19,18 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.*;
 
 
+/**
+ * @author Sanyog Varshney
+ * @since 1.0
+ * @version 1.0
+ */
 public class AirportManagerTest {
 
     IAirportService mockService;
     List<String> mockAirports;
     List<String> emptyAirports;
     List<String> continentsList;
+
 
     @Before
     public void init(){
@@ -46,6 +52,12 @@ public class AirportManagerTest {
         System.out.println("Executing before test");
     }
 
+    /**
+     *
+     * @throws IOException
+     * @throws URISyntaxException
+     * @throws InterruptedException
+     */
     @Test
     public void testListAllAirports() throws IOException, URISyntaxException, InterruptedException {
         IAirportService manager = new AirportManagerImpl();
@@ -53,6 +65,7 @@ public class AirportManagerTest {
         int actual = manager.listAllAirports();
         assertEquals(expected, actual);
     }
+
 
     @Test
     public void testFindAirportsByName() {
@@ -119,6 +132,10 @@ public class AirportManagerTest {
         Object[] actual = manager.findAirportsByContinent("AF", mockAirports).toArray();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testListAllRegions() throws IOException {
         IAirportService manager = new AirportManagerImpl();
@@ -129,6 +146,10 @@ public class AirportManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testListAllNavaids() throws IOException {
         IAirportService manager = new AirportManagerImpl();
@@ -148,6 +169,11 @@ public class AirportManagerTest {
     public void testGetRandomAirport() {
         fail("Not Yet Impemented");
     }
+
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testListCountries() throws IOException {
         IAirportService manager = new AirportManagerImpl();
@@ -157,6 +183,10 @@ public class AirportManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testListContinents() throws IOException {
         IAirportService manage = new AirportManagerImpl();

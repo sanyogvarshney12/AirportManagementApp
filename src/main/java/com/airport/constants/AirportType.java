@@ -20,6 +20,10 @@ public enum AirportType {
         this.value = value;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getValue() {
         return this.value;
     }
