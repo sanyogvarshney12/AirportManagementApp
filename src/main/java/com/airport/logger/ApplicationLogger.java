@@ -21,4 +21,8 @@ public class ApplicationLogger {
         LOGGER.debug("CLASSNAME : "+className+ ":: METHODNAME : "+methodName+" :: "+msg, obj);
     }
 
+    public void error(String msg, Throwable e) {
+        LOGGER.error(msg, e);
+    }
+
 }

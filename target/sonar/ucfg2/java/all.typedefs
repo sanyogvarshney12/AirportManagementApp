@@ -17,7 +17,7 @@ getClass(),java.lang.Object#getClass()Ljava/lang/Class;5
 wait()java.lang.Object#wait()V*
 
 hashCode()java.lang.Object#hashCode()I/
-com.airport.IAirportServicejava.lang.ObjectÜ
+com.airport.IAirportServicejava.lang.ObjectÊ
 com.airport.AirportManagerImplcom.airport.IAirportServicejava.lang.Object`
 findHelipads(Ljava/util/List;)>com.airport.AirportManagerImpl#findHelipads(Ljava/util/List;)JS
 listAllRegions()?com.airport.AirportManagerImpl#listAllRegions()Ljava/util/List;d
@@ -28,11 +28,11 @@ hashCode()java.lang.Object#hashCode()I/
 #splitContinents(Ljava/lang/String;)Tcom.airport.AirportManagerImpl#splitContinents(Ljava/lang/String;)Ljava/lang/String;ù
 5findAirportByType(Ljava/lang/String;Ljava/util/List;)dcom.airport.AirportManagerImpl#findAirportByType(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;\
 heliport(Ljava/lang/String;)<com.airport.AirportManagerImpl#heliport(Ljava/lang/String;)ZX
-closed(Ljava/lang/String;):com.airport.AirportManagerImpl#closed(Ljava/lang/String;)Z©
+closed(Ljava/lang/String;):com.airport.AirportManagerImpl#closed(Ljava/lang/String;)ZM
+listNavaids()<com.airport.AirportManagerImpl#listNavaids()Ljava/util/List;©
 ;findAirportsByContinent(Ljava/lang/String;Ljava/util/List;)jcom.airport.AirportManagerImpl#findAirportsByContinent(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;4
 <init>()(com.airport.AirportManagerImpl#<init>()Vd
- seaplaneBase(Ljava/lang/String;)@com.airport.AirportManagerImpl#seaplaneBase(Ljava/lang/String;)Zm
-listNavaids(Ljava/util/List;)Lcom.airport.AirportManagerImpl#listNavaids(Ljava/util/List;)Ljava/util/List;S
+ seaplaneBase(Ljava/lang/String;)@com.airport.AirportManagerImpl#seaplaneBase(Ljava/lang/String;)ZS
 listContinents()?com.airport.AirportManagerImpl#listContinents()Ljava/util/List;d
  smallAirport(Ljava/lang/String;)@com.airport.AirportManagerImpl#smallAirport(Ljava/lang/String;)Zf
 !mediumAirport(Ljava/lang/String;)Acom.airport.AirportManagerImpl#mediumAirport(Ljava/lang/String;)Zü

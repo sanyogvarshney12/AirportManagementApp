@@ -1,22 +1,25 @@
 package com.airport.helper;
 
+import com.airport.logger.ApplicationLogger;
+
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyHelper {
     private static final Properties properties = new Properties();
+    private static final String CLASSNAME = PropertyHelper.class.getName();
+    private static final ApplicationLogger logger = new ApplicationLogger();
 
-    private PropertyHelper(){
-
+    private PropertyHelper() {
+        logger.debug(CLASSNAME, "propertyhelper()","constructure instansiated");
     }
-
     static {
         try {
             properties.load(PropertyHelper.class
                     .getClassLoader()
                     .getResourceAsStream("application.properties"));
         }catch(IOException e){
-            e.printStackTrace();
+            logger.error("Some System Exception occured", e);
         }
     }
     public static String getProperty(String key){

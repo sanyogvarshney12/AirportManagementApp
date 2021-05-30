@@ -123,7 +123,7 @@ import java.util.stream.Collectors;
 <span class="fc" id="L123">                .lines().collect(Collectors.toList());</span>
 <span class="fc" id="L124">        countriesList.remove(0);</span>
 <span class="fc" id="L125">        List&lt;String&gt; continentList = countriesList.stream().map(s-&gt; splitContinents(s)).distinct().sorted().collect(Collectors.toList());</span>
-<span class="fc" id="L126">        logger.debug(CLASSNAME, methodName, &quot;Total Countries : {}&quot;, continentList.size());</span>
+<span class="fc" id="L126">        logger.debug(CLASSNAME, methodName, &quot;Total Continents : {}&quot;, continentList.size());</span>
 <span class="fc" id="L127">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
 <span class="fc" id="L128">        return continentList;</span>
     }
@@ -145,47 +145,53 @@ import java.util.stream.Collectors;
 <span class="fc" id="L145">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
 <span class="fc" id="L146">        List&lt;String&gt; regionList = Files.readString(Paths.get(&quot;C:\\Users\\sanyo\\Desktop\\airportData\\regions.csv&quot;))</span>
 <span class="fc" id="L147">                .lines().collect(Collectors.toList());</span>
-<span class="fc" id="L148">        logger.debug(CLASSNAME, methodName, &quot;Total Countries : {}&quot;, regionList.size());</span>
+<span class="fc" id="L148">        logger.debug(CLASSNAME, methodName, &quot;Total Regions : {}&quot;, regionList.size());</span>
 <span class="fc" id="L149">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
 <span class="fc" id="L150">        return regionList;</span>
     }
 
     @Override
-    public List&lt;String&gt; listNavaids(List&lt;String&gt; navaids) {
-<span class="nc" id="L155">        return null;</span>
+    public List&lt;String&gt; listNavaids() throws IOException {
+<span class="fc" id="L155">        String methodName = &quot;listNavaids()&quot;;</span>
+<span class="fc" id="L156">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L157">        List&lt;String&gt; navaidsList = Files.readString(Paths.get(&quot;C:\\Users\\sanyo\\Desktop\\airportData\\navaids.csv&quot;))</span>
+<span class="fc" id="L158">                .lines().collect(Collectors.toList());</span>
+<span class="fc" id="L159">        logger.debug(CLASSNAME, methodName, &quot;Total Navigation Aids : {}&quot;, navaidsList.size());</span>
+<span class="fc" id="L160">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L161">        return navaidsList;</span>
     }
 
     public static boolean smallAirport(String airport){
-<span class="fc" id="L159">        return airport.contains(AirportType.SMALLAIRPORT.getValue());</span>
+<span class="fc" id="L165">        return airport.contains(AirportType.SMALLAIRPORT.getValue());</span>
     }
 
     public static boolean largeAirport(String airport){
-<span class="fc" id="L163">        return airport.contains(AirportType.LARGEAIRPORT.getValue());</span>
+<span class="fc" id="L169">        return airport.contains(AirportType.LARGEAIRPORT.getValue());</span>
     }
 
     public static boolean mediumAirport(String airport){
-<span class="fc" id="L167">        return airport.contains(AirportType.MEDIUMAIRPORT.getValue());</span>
+<span class="fc" id="L173">        return airport.contains(AirportType.MEDIUMAIRPORT.getValue());</span>
     }
 
     public static boolean baloonAirport(String airport){
-<span class="fc" id="L171">        return airport.contains(AirportType.BALOONAIRPORT.getValue());</span>
+<span class="fc" id="L177">        return airport.contains(AirportType.BALOONAIRPORT.getValue());</span>
     }
 
     public static boolean heliport(String airport){
-<span class="fc" id="L175">        return airport.contains(AirportType.HELIPORT.getValue());</span>
+<span class="fc" id="L181">        return airport.contains(AirportType.HELIPORT.getValue());</span>
     }
 
     public static boolean closed(String airport){
-<span class="fc" id="L179">        return airport.contains(AirportType.CLOSED.getValue());</span>
+<span class="fc" id="L185">        return airport.contains(AirportType.CLOSED.getValue());</span>
     }
 
     public static boolean seaplaneBase(String airport){
-<span class="fc" id="L183">        return airport.contains(AirportType.SEAPLANEBASE.getValue());</span>
+<span class="fc" id="L189">        return airport.contains(AirportType.SEAPLANEBASE.getValue());</span>
     }
 
     public static String splitContinents(String s){
-<span class="fc" id="L187">        String[] arr = s.split(&quot;,&quot;);</span>
-<span class="fc" id="L188">        return arr[3].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L193">        String[] arr = s.split(&quot;,&quot;);</span>
+<span class="fc" id="L194">        return arr[3].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
