@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.airport.AirportManagerTest
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 0.565 sec <<< FAILURE!
-testGetRandomAirport(com.airport.AirportManagerTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+Tests run: 18, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 0.577 sec <<< FAILURE!
+testGetRandomAirport(com.airport.AirportManagerTest)  Time elapsed: 0.006 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testGetRandomAirport(AirportManagerTest.java:148)
@@ -182,7 +182,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsByContinent(com.airport.AirportManagerTest)  Time elapsed: 0.003 sec  <<< ERROR!
+testFindAirportsByContinent(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< ERROR!
 com.airport.exception.NoAirportsFoundForContinentException: No Airport found for this Continent
 	at com.airport.AirportManagerImpl.lambda$findAirportsByContinent$12(AirportManagerImpl.java:110)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:408)

@@ -132,9 +132,10 @@ LcollectingAndThen(Ljava/util/stream/Collector;Ljava/util/function/Function;)„
 toList()@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;¢
 3groupingByConcurrent(Ljava/util/function/Function;)kjava.util.stream.Collectors#groupingByConcurrent(Ljava/util/function/Function;)Ljava/util/stream/Collector;v
 maxBy(Ljava/util/Comparator;)Ujava.util.stream.Collectors#maxBy(Ljava/util/Comparator;)Ljava/util/stream/Collector;Û
-OgroupingByConcurrent(Ljava/util/function/Function;Ljava/util/stream/Collector;)‡java.util.stream.Collectors#groupingByConcurrent(Ljava/util/function/Function;Ljava/util/stream/Collector;)Ljava/util/stream/Collector;æ
+OgroupingByConcurrent(Ljava/util/function/Function;Ljava/util/stream/Collector;)‡java.util.stream.Collectors#groupingByConcurrent(Ljava/util/function/Function;Ljava/util/stream/Collector;)Ljava/util/stream/Collector;ï
 $com.airport.logger.ApplicationLoggerjava.lang.Object:
-<init>().com.airport.logger.ApplicationLogger#<init>()VÈ
+<init>().com.airport.logger.ApplicationLogger#<init>()V†
+.error(Ljava/lang/String;Ljava/lang/Throwable;)Tcom.airport.logger.ApplicationLogger#error(Ljava/lang/String;Ljava/lang/Throwable;)VÈ
 Odebug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)ucom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V¤
 =debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)ccom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V¢
 java.util.Optionaljava.lang.ObjectL

@@ -10,10 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.logging.LogManager;
 import java.util.stream.Collectors;
 
 /**
@@ -33,19 +30,19 @@ public class AirportManagerImpl implements IAirportService{
     public int listAllAirports(List<String> airports){
         String methodName = "listAllAirports()";
         log.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> smallAirports = airports.stream().filter(airport->smallAirport(airport))
+        List<String> smallAirports = airports.stream().filter(AirportManagerImpl::smallAirport)
                 .collect(Collectors.toList());
-        List<String> largeAirports = airports.stream().filter(airport->largeAirport(airport))
+        List<String> largeAirports = airports.stream().filter(AirportManagerImpl::largeAirport)
                 .collect(Collectors.toList());
-        List<String> mediumAirports = airports.stream().filter(airport->mediumAirport(airport))
+        List<String> mediumAirports = airports.stream().filter(AirportManagerImpl::mediumAirport)
                 .collect(Collectors.toList());
-        List<String> heliport = airports.stream().filter(airport->heliport(airport))
+        List<String> heliport = airports.stream().filter(AirportManagerImpl::heliport)
                 .collect(Collectors.toList());
-        List<String> closed = airports.stream().filter(airport->closed(airport))
+        List<String> closed = airports.stream().filter(AirportManagerImpl::closed)
                 .collect(Collectors.toList());
-        List<String> baloonAirports = airports.stream().filter(airport->baloonAirport(airport))
+        List<String> baloonAirports = airports.stream().filter(AirportManagerImpl::baloonAirport)
                 .collect(Collectors.toList());
-        List<String> seaplaneBase = airports.stream().filter(airport->seaplaneBase(airport))
+        List<String> seaplaneBase = airports.stream().filter(AirportManagerImpl::seaplaneBase)
                 .collect(Collectors.toList());
 
         int totalAirports = smallAirports.size()+largeAirports.size()+mediumAirports.size()
@@ -60,7 +57,7 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByName = airports.stream().filter(airport->airport.contains(name))
                 .collect(Collectors.toList());
-        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByName.get(0));
+        logger.debug(CLASSNAME, methodName, "Airport Details by Name : {}", airportByName.get(0));
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByName.get(0);
     }
@@ -74,7 +71,7 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByCountry = airports.stream().filter(airport->airport.contains(country))
                 .collect(Collectors.toList());
-        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByCountry);
+        logger.debug(CLASSNAME, methodName, "Airport Details by Country : {}", airportByCountry);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByCountry;
     }
@@ -84,7 +81,7 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByType = airports.stream().filter(airport->airport.contains(type))
                 .collect(Collectors.toList());
-        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByType);
+        logger.debug(CLASSNAME, methodName, "Airport Details by Type : {}", airportByType);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByType;
     }
@@ -109,7 +106,7 @@ public class AirportManagerImpl implements IAirportService{
         airportByContinent.stream().findAny()
                 .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
                 .lines().count();
-        logger.debug(CLASSNAME, methodName, "Airport Details : {}", airportByContinent);
+        logger.debug(CLASSNAME, methodName, "Airport Details by Continents : {}", airportByContinent);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByContinent;
     }

@@ -21,5 +21,9 @@ import org.slf4j.LoggerFactory;
 <span class="fc" id="L21">        LOGGER.debug(&quot;CLASSNAME : &quot;+className+ &quot;:: METHODNAME : &quot;+methodName+&quot; :: &quot;+msg, obj);</span>
 <span class="fc" id="L22">    }</span>
 
+    public void error(String msg, Throwable e) {
+<span class="nc" id="L25">        LOGGER.error(msg, e);</span>
+<span class="nc" id="L26">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
