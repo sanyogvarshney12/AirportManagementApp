@@ -32,7 +32,7 @@ public class AirportManagerImpl implements IAirportService{
 
     private static final String CLASSNAME = AirportManagerImpl.class.getName();
     private static final Logger log = LoggerFactory.getLogger(AirportManagerImpl.class);
-    private ApplicationLogger logger = new ApplicationLogger();
+    private final ApplicationLogger logger = new ApplicationLogger();
     private static final String METHODSTARTMSG = "***** Method Started *****";
     private static final String METHODENDMSG = "***** Method Ended *****";
 
@@ -40,23 +40,7 @@ public class AirportManagerImpl implements IAirportService{
     public int listAllAirports() throws IOException, URISyntaxException, InterruptedException {
         String methodName = "listAllAirports()";
         log.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> airports = readAirportData();
-        List<String> smallAirports = airports.stream().filter(AirportManagerImpl::smallAirport)
-                .collect(Collectors.toList());
-        List<String> largeAirports = airports.stream().filter(AirportManagerImpl::largeAirport)
-                .collect(Collectors.toList());
-        List<String> mediumAirports = airports.stream().filter(AirportManagerImpl::mediumAirport)
-                .collect(Collectors.toList());
-        List<String> heliport = airports.stream().filter(AirportManagerImpl::heliport)
-                .collect(Collectors.toList());
-        List<String> closed = airports.stream().filter(AirportManagerImpl::closed)
-                .collect(Collectors.toList());
-        List<String> baloonAirports = airports.stream().filter(AirportManagerImpl::baloonAirport)
-                .collect(Collectors.toList());
-        List<String> seaplaneBase = airports.stream().filter(AirportManagerImpl::seaplaneBase)
-                .collect(Collectors.toList());
-        int totalAirports = smallAirports.size()+largeAirports.size()+mediumAirports.size()
-                +closed.size()+baloonAirports.size()+heliport.size()+seaplaneBase.size();
+        int totalAirports = readAirportData().size();
         logger.debug(CLASSNAME, methodName, "For people who fly: {} and counting...", totalAirports);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return totalAirports;
@@ -98,8 +82,12 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> helipadsList = airports.stream().filter(AirportManagerImpl::heliport)
                 .collect(Collectors.toList());
-        long size = helipadsList.stream().findAny()
-                .orElseThrow(()-> new NoHeliportFoundException("No Heliports found in the system.")).lines().count();
+        //long size = helipadsList.stream().findAny()
+                //.orElseThrow(()-> new NoHeliportFoundException("No Heliports found in the system.")).lines().count();
+        if(helipadsList.size() == 0){
+            throw new NoHeliportFoundException("No Heliports found in the system.");
+        }
+        long size = helipadsList.size();
         logger.debug(CLASSNAME, methodName, "Number of Heliports found : {}", size);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return size;
@@ -109,9 +97,12 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "findAirportsByContinent()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> airportByContinent = getListByFunction(airports, continent);
-        airportByContinent.stream().findAny()
-                .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
-                .lines().count();
+        //airportByContinent.stream().findAny()
+        //        .orElseThrow(()->new NoAirportsFoundForContinentException("No Airport found for this Continent"))
+        //        .lines().count();
+        if(airportByContinent.size() == 0){
+            throw new NoAirportsFoundForContinentException("No Airport found for this Continent");
+        }
         logger.debug(CLASSNAME, methodName, "Airport Details by Continents : {}", airportByContinent);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return airportByContinent;

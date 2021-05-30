@@ -1,42 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<configuration>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="true">
     <property name="LOG_LOCATION" value="C:/AirportManagementApp/logs" />
-    <appender name="Console" class="ch.qos.logback.ConsoleAppender">
-        <layout class="ch.qos.logback.classic.PatternLayout">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
             <pattern>
-                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable
+                [%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n
             </pattern>
-        </layout>
+        </encoder>
     </appender>
 
     <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_LOCATION}/airportLog.log</file>
-        <encoder
-                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] - %logger{36} - %msg%n</Pattern>
         </encoder>
-
-        <rollingPolicy
-                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <RollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily and when the file reaches 20 MegaBytes -->
-            <fileNamePattern>${LOG_LOCATION}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
-            </fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>20MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
+            <FileNamePattern>${LOG_LOCATION}/log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+                <MaxFileSize>20MB</MaxFileSize>
+                <TotalSizeCap>10GB</TotalSizeCap>
+                <MaxHistory>60</MaxHistory>
+        </RollingPolicy>
     </appender>
-
-    <!-- LOG everything at INFO level -->
-    <root level="DEBUG">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </root>
 
     <logger name="com.airport" level="DEBUG" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>
+    <!-- LOG everything at INFO level -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="RollingFile" />
+
+    </root>
 
 </configuration>

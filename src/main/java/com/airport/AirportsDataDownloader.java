@@ -1,26 +1,20 @@
 package com.airport;
 
-import com.airport.helper.PropertyHelper;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.StringReader;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
+import ch.qos.logback.classic.Logger;
+import com.airport.logger.ApplicationLogger;
+import org.slf4j.LoggerFactory;
 
 public class AirportsDataDownloader {
-//Using Java11 features
-    public static void main(String[] args) throws Exception {
 
-        //List<String> airports = readAirportData();
-        IAirportService airportManager = new AirportManagerImpl();
-       // airportManager.listAllAirports(airports);
+    private static Logger LOGGER =
+            (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(AirportsDataDownloader.class);
+    //Using Java11 features
+    public static void main(String[] args) throws Exception {
+        LOGGER.info("Welcome 123");
+        LOGGER.debug("Welcome 123");
+        LOGGER.debug(AirportsDataDownloader.class.getName(),"main", "Welcome");
+        IAirportService service = new AirportManagerImpl();
+        service.listAllAirports();
     }
 
 

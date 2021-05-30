@@ -14,11 +14,11 @@ public class ApplicationLogger {
     private Logger LOGGER = LoggerFactory.getLogger(ApplicationLogger.class);
 
     public void debug(String className, String methodName, String msg) {
-        LOGGER.debug("CLASSNAME : "+className+ ":: METHODNAME : "+methodName+" :: "+msg);
+        LOGGER.debug("CLASSNAME : {} :: METHODNAME : {} :: {}", className, methodName, msg);
     }
 
     public void debug(String className, String methodName, String msg, Object obj) {
-        LOGGER.debug("CLASSNAME : "+className+ ":: METHODNAME : "+methodName+" :: "+msg, obj);
+        LOGGER.debug("CLASSNAME : {} :: METHODNAME : {}  :: {} {}", className, methodName, msg, obj);
     }
 
     public void error(String msg, Throwable e) {
