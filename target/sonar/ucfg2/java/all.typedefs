@@ -17,14 +17,15 @@ getClass(),java.lang.Object#getClass()Ljava/lang/Class;5
 wait()java.lang.Object#wait()V*
 
 hashCode()java.lang.Object#hashCode()I/
-com.airport.IAirportServicejava.lang.ObjectÊ
+com.airport.IAirportServicejava.lang.ObjectÜ
 com.airport.AirportManagerImplcom.airport.IAirportServicejava.lang.Object`
 findHelipads(Ljava/util/List;)>com.airport.AirportManagerImpl#findHelipads(Ljava/util/List;)JS
 listAllRegions()?com.airport.AirportManagerImpl#listAllRegions()Ljava/util/List;d
  largeAirport(Ljava/lang/String;)@com.airport.AirportManagerImpl#largeAirport(Ljava/lang/String;)ZQ
 listCountries()>com.airport.AirportManagerImpl#listCountries()Ljava/util/List;£
 8findAirportByCountry(Ljava/lang/String;Ljava/util/List;)gcom.airport.AirportManagerImpl#findAirportByCountry(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;f
-!listAllAirports(Ljava/util/List;)Acom.airport.AirportManagerImpl#listAllAirports(Ljava/util/List;)I{
+!listAllAirports(Ljava/util/List;)Acom.airport.AirportManagerImpl#listAllAirports(Ljava/util/List;)Iù
+5getListByFunction(Ljava/util/List;Ljava/lang/String;)dcom.airport.AirportManagerImpl#getListByFunction(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;{
 #splitContinents(Ljava/lang/String;)Tcom.airport.AirportManagerImpl#splitContinents(Ljava/lang/String;)Ljava/lang/String;ù
 5findAirportByType(Ljava/lang/String;Ljava/util/List;)dcom.airport.AirportManagerImpl#findAirportByType(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;\
 heliport(Ljava/lang/String;)<com.airport.AirportManagerImpl#heliport(Ljava/lang/String;)ZX

@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -46,10 +47,10 @@ public class AirportManagerTest {
     }
 
     @Test
-    public void testListAllAirports(){
+    public void testListAllAirports() throws IOException, URISyntaxException, InterruptedException {
         IAirportService manager = new AirportManagerImpl();
-        int expected = 6;
-        int actual = manager.listAllAirports(mockAirports);
+        int expected = 65537;
+        int actual = manager.listAllAirports();
         assertEquals(expected, actual);
     }
 

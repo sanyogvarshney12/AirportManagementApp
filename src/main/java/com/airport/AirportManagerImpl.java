@@ -3,13 +3,23 @@ package com.airport;
 import com.airport.constants.AirportType;
 import com.airport.exception.NoAirportsFoundForContinentException;
 import com.airport.exception.NoHeliportFoundException;
+import com.airport.helper.PropertyHelper;
 import com.airport.logger.ApplicationLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.StringReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,9 +37,10 @@ public class AirportManagerImpl implements IAirportService{
     private static final String METHODENDMSG = "***** Method Ended *****";
 
 
-    public int listAllAirports(List<String> airports){
+    public int listAllAirports() throws IOException, URISyntaxException, InterruptedException {
         String methodName = "listAllAirports()";
         log.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> airports = readAirportData();
         List<String> smallAirports = airports.stream().filter(AirportManagerImpl::smallAirport)
                 .collect(Collectors.toList());
         List<String> largeAirports = airports.stream().filter(AirportManagerImpl::largeAirport)
@@ -44,7 +55,6 @@ public class AirportManagerImpl implements IAirportService{
                 .collect(Collectors.toList());
         List<String> seaplaneBase = airports.stream().filter(AirportManagerImpl::seaplaneBase)
                 .collect(Collectors.toList());
-
         int totalAirports = smallAirports.size()+largeAirports.size()+mediumAirports.size()
                 +closed.size()+baloonAirports.size()+heliport.size()+seaplaneBase.size();
         logger.debug(CLASSNAME, methodName, "For people who fly: {} and counting...", totalAirports);
@@ -112,10 +122,10 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listContinents()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> countriesList = Files.readString(Paths
-                .get("C:\\Users\\sanyo\\Desktop\\airportData\\countries.csv"))
+                .get(PropertyHelper.getProperty("COUNTRIES_CSV_LOCATION")))
                 .lines().collect(Collectors.toList());
         countriesList.remove(0);
-        List<String> continentList = countriesList.stream().map(s-> splitContinents(s)).distinct().sorted().collect(Collectors.toList());
+        List<String> continentList = countriesList.stream().map(AirportManagerImpl::splitContinents).distinct().sorted().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Continents : {}", continentList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return continentList;
@@ -126,7 +136,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listCountries()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> countriesList = Files.readString(Paths
-                .get("C:\\Users\\sanyo\\Desktop\\airportData\\countries.csv"))
+                .get(PropertyHelper.getProperty("COUNTRIES_CSV_LOCATION")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Countries : {}", countriesList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -136,7 +146,8 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> listAllRegions() throws IOException {
         String methodName = "listAllRegions()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> regionList = Files.readString(Paths.get("C:\\Users\\sanyo\\Desktop\\airportData\\regions.csv"))
+        List<String> regionList = Files.readString(Paths
+                .get(PropertyHelper.getProperty("REGION_CSV_LOCATION")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Regions : {}", regionList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -147,7 +158,8 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> listNavaids() throws IOException {
         String methodName = "listNavaids()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        List<String> navaidsList = Files.readString(Paths.get("C:\\Users\\sanyo\\Desktop\\airportData\\navaids.csv"))
+        List<String> navaidsList = Files.readString(Paths
+                .get(PropertyHelper.getProperty("NAVAIDS_CSV_LOCATION")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Navigation Aids : {}", navaidsList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -188,8 +200,24 @@ public class AirportManagerImpl implements IAirportService{
     }
 
     public List<String> getListByFunction(List<String> airports, String function) {
-        List<String> list = airports.stream().filter(airport->airport.contains(function))
+        return airports.stream().filter(airport->airport.contains(function))
                 .collect(Collectors.toList());
-        return list;
+    }
+
+    public static List<String> readAirportData() throws IOException, URISyntaxException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty("AIRPORTS_CSV_LOCATION")))
+                .GET()
+                .timeout(Duration.ofMinutes(1))
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        BufferedReader reader = new BufferedReader(new StringReader(response.body()));
+        String line = "";
+        List<String> airports = new ArrayList<>();
+        while((line = reader.readLine()) != null){
+            airports.add(line.replace("\"", ""));
+        }
+        return airports;
     }
 }

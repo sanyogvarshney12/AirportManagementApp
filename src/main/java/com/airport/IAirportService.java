@@ -1,11 +1,12 @@
 package com.airport;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 public interface IAirportService {
 
-    public int listAllAirports(List<String> airports);
+    public int listAllAirports() throws IOException, URISyntaxException, InterruptedException;
     public String findAirportByName(String name, List<String> airports);
     public List<String> findAirportByCountry(String country, List<String> airports);
     public List<String> findAirportByType(String type, List<String> airports);

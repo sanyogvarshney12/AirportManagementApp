@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.airport.AirportManagerTest
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 0.606 sec <<< FAILURE!
+Tests run: 18, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.555 sec <<< FAILURE!
 testGetRandomAirport(com.airport.AirportManagerTest)  Time elapsed: 0.013 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
@@ -38,7 +38,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testLogin(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testLogin(com.airport.AirportManagerTest)  Time elapsed: 0.01 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testLogin(AirportManagerTest.java:169)
@@ -74,7 +74,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListAll(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testListAll(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testListAll(AirportManagerTest.java:143)
@@ -110,7 +110,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsBySize(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testFindAirportsBySize(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testFindAirportsBySize(AirportManagerTest.java:83)
@@ -146,7 +146,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsByRunways(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testFindAirportsByRunways(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testFindAirportsByRunways(AirportManagerTest.java:88)
@@ -182,45 +182,7 @@ java.lang.AssertionError: Not Yet Impemented
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindAirportsByContinent(com.airport.AirportManagerTest)  Time elapsed: 0.005 sec  <<< ERROR!
-com.airport.exception.NoAirportsFoundForContinentException: No Airport found for this Continent
-	at com.airport.AirportManagerImpl.lambda$findAirportsByContinent$5(AirportManagerImpl.java:107)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
-	at com.airport.AirportManagerImpl.findAirportsByContinent(AirportManagerImpl.java:107)
-	at com.airport.AirportManagerTest.testFindAirportsByContinent(AirportManagerTest.java:110)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-
-testSignup(com.airport.AirportManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testSignup(com.airport.AirportManagerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.airport.AirportManagerTest.testSignup(AirportManagerTest.java:174)
