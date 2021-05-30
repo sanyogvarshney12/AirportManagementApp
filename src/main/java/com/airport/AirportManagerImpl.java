@@ -152,32 +152,8 @@ public class AirportManagerImpl implements IAirportService{
         return navaidsList;
     }
 
-    public static boolean smallAirport(String airport){
-        return airport.contains(AirportType.SMALLAIRPORT.getValue());
-    }
-
-    public static boolean largeAirport(String airport){
-        return airport.contains(AirportType.LARGEAIRPORT.getValue());
-    }
-
-    public static boolean mediumAirport(String airport){
-        return airport.contains(AirportType.MEDIUMAIRPORT.getValue());
-    }
-
-    public static boolean baloonAirport(String airport){
-        return airport.contains(AirportType.BALOONAIRPORT.getValue());
-    }
-
     public static boolean heliport(String airport){
         return airport.contains(AirportType.HELIPORT.getValue());
-    }
-
-    public static boolean closed(String airport){
-        return airport.contains(AirportType.CLOSED.getValue());
-    }
-
-    public static boolean seaplaneBase(String airport){
-        return airport.contains(AirportType.SEAPLANEBASE.getValue());
     }
 
     public static String splitContinents(String s){
