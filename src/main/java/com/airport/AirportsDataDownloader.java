@@ -42,10 +42,4 @@ public class AirportsDataDownloader {
         return airports;
     }
 
-    public static List<String> readRunwaysData() throws IOException {
-        List<String> list = Files.readString(Paths.get("..\\Users\\sanyo\\Desktop\\airportData\\runways.csv"))
-                .lines().collect(Collectors.toList());
-        return list;
-    }
-
 }

@@ -119,8 +119,13 @@ public class AirportManagerTest {
     }
 
     @Test
-    public void testListAllRegions() {
-        fail("Not Yet Impemented");
+    public void testListAllRegions() throws IOException {
+        IAirportService manager = new AirportManagerImpl();
+        Object[] expected = Files.readAllLines(Paths
+                .get("C:\\Users\\sanyo\\Desktop\\airportData\\regions.csv"))
+                .toArray();
+        Object[] actual = manager.listAllRegions().toArray();
+        assertArrayEquals(expected, actual);
     }
 
     @Test

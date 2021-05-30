@@ -140,6 +140,16 @@ public class AirportManagerImpl implements IAirportService{
         return countriesList;
     }
 
+    public List<String> listAllRegions() throws IOException {
+        String methodName = "listAllRegions()";
+        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
+        List<String> regionList = Files.readString(Paths.get("C:\\Users\\sanyo\\Desktop\\airportData\\regions.csv"))
+                .lines().collect(Collectors.toList());
+        logger.debug(CLASSNAME, methodName, "Total Countries : {}", regionList.size());
+        logger.debug(CLASSNAME, methodName, METHODENDMSG);
+        return regionList;
+    }
+
     @Override
     public List<String> listNavaids(List<String> navaids) {
         return null;
