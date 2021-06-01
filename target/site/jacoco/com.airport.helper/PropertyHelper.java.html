@@ -5,28 +5,34 @@ import com.airport.logger.ApplicationLogger;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author Sanyog Varshney
+ * @since 1.0
+ * @version 1.0
+ * @implNote utility class
+ */
 public class PropertyHelper {
-<span class="fc" id="L9">    private static final Properties properties = new Properties();</span>
-<span class="fc" id="L10">    private static final String CLASSNAME = PropertyHelper.class.getName();</span>
-<span class="fc" id="L11">    private static final ApplicationLogger logger = new ApplicationLogger();</span>
+<span class="fc" id="L15">    private static final Properties properties = new Properties();</span>
+<span class="fc" id="L16">    private static final String CLASSNAME = PropertyHelper.class.getName();</span>
+<span class="fc" id="L17">    private static final ApplicationLogger logger = new ApplicationLogger();</span>
 
-<span class="nc" id="L13">    private PropertyHelper() {</span>
-<span class="nc" id="L14">        logger.debug(CLASSNAME, &quot;propertyhelper()&quot;,&quot;constructure instansiated&quot;);</span>
-<span class="nc" id="L15">    }</span>
+<span class="nc" id="L19">    private PropertyHelper() {</span>
+<span class="nc" id="L20">        logger.debug(CLASSNAME, &quot;propertyhelper()&quot;,&quot;constructure instansiated&quot;);</span>
+<span class="nc" id="L21">    }</span>
     static {
         try {
-<span class="fc" id="L18">            properties.load(PropertyHelper.class</span>
-<span class="fc" id="L19">                    .getClassLoader()</span>
-<span class="fc" id="L20">                    .getResourceAsStream(&quot;application.properties&quot;));</span>
-<span class="nc" id="L21">        }catch(IOException e){</span>
-<span class="nc" id="L22">            logger.error(&quot;Some System Exception occured&quot;, e);</span>
-<span class="fc" id="L23">        }</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L24">            properties.load(PropertyHelper.class</span>
+<span class="fc" id="L25">                    .getClassLoader()</span>
+<span class="fc" id="L26">                    .getResourceAsStream(&quot;application.properties&quot;));</span>
+<span class="nc" id="L27">        }catch(IOException e){</span>
+<span class="nc" id="L28">            logger.error(&quot;Some System Exception occured&quot;, e);</span>
+<span class="fc" id="L29">        }</span>
+<span class="fc" id="L30">    }</span>
     public static String getProperty(String key){
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if(properties.containsKey(key)) {</span>
-<span class="fc" id="L27">            return properties.getProperty(key);</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if(properties.containsKey(key)) {</span>
+<span class="fc" id="L33">            return properties.getProperty(key);</span>
         }else{
-<span class="nc" id="L29">            return &quot;&quot;;</span>
+<span class="nc" id="L35">            return &quot;&quot;;</span>
         }
     }
 }

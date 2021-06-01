@@ -26,7 +26,6 @@ import static org.junit.Assert.*;
  */
 public class AirportManagerTest {
 
-    IAirportService mockService;
     List<String> mockAirports;
     List<String> emptyAirports;
     List<String> continentsList;
@@ -35,7 +34,6 @@ public class AirportManagerTest {
     @Before
     public void init(){
         System.out.println("Executing before test");
-        mockService = Mockito.mock(IAirportService.class);
         mockAirports = new ArrayList<>();
         emptyAirports = new ArrayList<>();
         continentsList = Arrays.asList("AF", "AN", "AS", "EU", "NA", "OC", "SA");

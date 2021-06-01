@@ -37,150 +37,225 @@ import java.util.stream.Collectors;
     private static final String METHODENDMSG = &quot;***** Method Ended *****&quot;;
 
 
+    /**
+     *
+     * @return int
+     * @throws IOException
+     * @throws URISyntaxException
+     * @throws InterruptedException
+     */
     public int listAllAirports() throws IOException, URISyntaxException, InterruptedException {
-<span class="fc" id="L41">        String methodName = &quot;listAllAirports()&quot;;</span>
-<span class="fc" id="L42">        log.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L43">        int totalAirports = readAirportData().size();</span>
-<span class="fc" id="L44">        logger.debug(CLASSNAME, methodName, &quot;For people who fly: {} and counting...&quot;, totalAirports);</span>
-<span class="fc" id="L45">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L46">        return totalAirports;</span>
-    }
-
-    public String findAirportByName(String name, List&lt;String&gt; airports) {
-<span class="fc" id="L50">        String methodName = &quot;findAirportByName()&quot;;</span>
-<span class="fc" id="L51">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L52">        List&lt;String&gt; airportByName = getListByFunction(airports, name);</span>
-<span class="fc" id="L53">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Name : {}&quot;, airportByName.get(0));</span>
-<span class="fc" id="L54">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L55">        return airportByName.get(0);</span>
+<span class="fc" id="L48">        String methodName = &quot;listAllAirports()&quot;;</span>
+<span class="fc" id="L49">        log.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L50">        int totalAirports = readAirportData().size();</span>
+<span class="fc" id="L51">        logger.debug(CLASSNAME, methodName, &quot;For people who fly: {} and counting...&quot;, totalAirports);</span>
+<span class="fc" id="L52">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L53">        return totalAirports;</span>
     }
 
     /**
      *
-     * @return
+     * @param name
+     * @param airports
+     * @return String
+     */
+    public String findAirportByName(String name, List&lt;String&gt; airports) {
+<span class="fc" id="L63">        String methodName = &quot;findAirportByName()&quot;;</span>
+<span class="fc" id="L64">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L65">        List&lt;String&gt; airportByName = getListByFunction(airports, name);</span>
+<span class="fc" id="L66">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Name : {}&quot;, airportByName.get(0));</span>
+<span class="fc" id="L67">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L68">        return airportByName.get(0);</span>
+    }
+
+    /**
+     *
+     * @param country
+     * @param airports
+     * @return List
      */
     public List&lt;String&gt; findAirportByCountry(String country, List&lt;String&gt; airports) {
-<span class="fc" id="L63">        String methodName = &quot;findAirportByCountry()&quot;;</span>
-<span class="fc" id="L64">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L65">        List&lt;String&gt; airportByCountry = getListByFunction(airports, country);</span>
-<span class="fc" id="L66">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Country : {}&quot;, airportByCountry);</span>
-<span class="fc" id="L67">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L68">        return airportByCountry;</span>
+<span class="fc" id="L78">        String methodName = &quot;findAirportByCountry()&quot;;</span>
+<span class="fc" id="L79">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L80">        List&lt;String&gt; airportByCountry = getListByFunction(airports, country);</span>
+<span class="fc" id="L81">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Country : {}&quot;, airportByCountry);</span>
+<span class="fc" id="L82">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L83">        return airportByCountry;</span>
     }
 
+    /**
+     *
+     * @param type
+     * @param airports
+     * @return List
+     */
     public List&lt;String&gt; findAirportByType(String type, List&lt;String&gt; airports) {
-<span class="fc" id="L72">        String methodName = &quot;findAirportByType()&quot;;</span>
-<span class="fc" id="L73">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L74">        List&lt;String&gt; airportByType = getListByFunction(airports, type);</span>
-<span class="fc" id="L75">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Type : {}&quot;, airportByType);</span>
-<span class="fc" id="L76">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L77">        return airportByType;</span>
+<span class="fc" id="L93">        String methodName = &quot;findAirportByType()&quot;;</span>
+<span class="fc" id="L94">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L95">        List&lt;String&gt; airportByType = getListByFunction(airports, type);</span>
+<span class="fc" id="L96">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Type : {}&quot;, airportByType);</span>
+<span class="fc" id="L97">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L98">        return airportByType;</span>
     }
 
+    /**
+     *
+     * @param airports
+     * @return long
+     */
     public long findHelipads(List&lt;String&gt; airports) {
-<span class="fc" id="L81">        String methodName = &quot;findHelipads()&quot;;</span>
-<span class="fc" id="L82">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L83">        List&lt;String&gt; helipadsList = airports.stream().filter(AirportManagerImpl::heliport)</span>
-<span class="fc" id="L84">                .collect(Collectors.toList());</span>
-<span class="fc bfc" id="L85" title="All 2 branches covered.">        if(helipadsList.isEmpty()){</span>
-<span class="fc" id="L86">            throw new NoHeliportFoundException(&quot;No Heliports found in the system.&quot;);</span>
+<span class="fc" id="L107">        String methodName = &quot;findHelipads()&quot;;</span>
+<span class="fc" id="L108">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L109">        List&lt;String&gt; helipadsList = airports.stream().filter(AirportManagerImpl::heliport)</span>
+<span class="fc" id="L110">                .collect(Collectors.toList());</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if(helipadsList.isEmpty()){</span>
+<span class="fc" id="L112">            throw new NoHeliportFoundException(&quot;No Heliports found in the system.&quot;);</span>
         }
-<span class="fc" id="L88">        long size = helipadsList.size();</span>
-<span class="fc" id="L89">        logger.debug(CLASSNAME, methodName, &quot;Number of Heliports found : {}&quot;, size);</span>
-<span class="fc" id="L90">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L91">        return size;</span>
+<span class="fc" id="L114">        long size = helipadsList.size();</span>
+<span class="fc" id="L115">        logger.debug(CLASSNAME, methodName, &quot;Number of Heliports found : {}&quot;, size);</span>
+<span class="fc" id="L116">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L117">        return size;</span>
     }
 
+    /**
+     *
+     * @param continent
+     * @param airports
+     * @return List
+     */
     public List&lt;String&gt; findAirportsByContinent(String continent, List&lt;String&gt; airports) {
-<span class="fc" id="L95">        String methodName = &quot;findAirportsByContinent()&quot;;</span>
-<span class="fc" id="L96">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L97">        List&lt;String&gt; airportByContinent = getListByFunction(airports, continent);</span>
-<span class="fc bfc" id="L98" title="All 2 branches covered.">        if(airportByContinent.isEmpty()){</span>
-<span class="fc" id="L99">            throw new NoAirportsFoundForContinentException(&quot;No Airport found for this Continent&quot;);</span>
+<span class="fc" id="L127">        String methodName = &quot;findAirportsByContinent()&quot;;</span>
+<span class="fc" id="L128">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L129">        List&lt;String&gt; airportByContinent = getListByFunction(airports, continent);</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">        if(airportByContinent.isEmpty()){</span>
+<span class="fc" id="L131">            throw new NoAirportsFoundForContinentException(&quot;No Airport found for this Continent&quot;);</span>
         }
-<span class="fc" id="L101">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Continents : {}&quot;, airportByContinent);</span>
-<span class="fc" id="L102">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L103">        return airportByContinent;</span>
+<span class="fc" id="L133">        logger.debug(CLASSNAME, methodName, &quot;Airport Details by Continents : {}&quot;, airportByContinent);</span>
+<span class="fc" id="L134">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L135">        return airportByContinent;</span>
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List&lt;String&gt; listContinents() throws IOException {
-<span class="fc" id="L108">        String methodName = &quot;listContinents()&quot;;</span>
-<span class="fc" id="L109">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L110">        List&lt;String&gt; countriesList = Files.readString(Paths</span>
-<span class="fc" id="L111">                .get(PropertyHelper.getProperty(&quot;COUNTRIES_CSV_LOCATION&quot;)))</span>
-<span class="fc" id="L112">                .lines().collect(Collectors.toList());</span>
-<span class="fc" id="L113">        countriesList.remove(0);</span>
-<span class="fc" id="L114">        List&lt;String&gt; continentList = countriesList.stream().map(AirportManagerImpl::splitContinents).distinct().sorted().collect(Collectors.toList());</span>
-<span class="fc" id="L115">        logger.debug(CLASSNAME, methodName, &quot;Total Continents : {}&quot;, continentList.size());</span>
-<span class="fc" id="L116">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L117">        return continentList;</span>
+<span class="fc" id="L145">        String methodName = &quot;listContinents()&quot;;</span>
+<span class="fc" id="L146">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L147">        List&lt;String&gt; countriesList = Files.readString(Paths</span>
+<span class="fc" id="L148">                .get(PropertyHelper.getProperty(&quot;COUNTRIES_CSV_LOCATION&quot;)))</span>
+<span class="fc" id="L149">                .lines().collect(Collectors.toList());</span>
+<span class="fc" id="L150">        countriesList.remove(0);</span>
+<span class="fc" id="L151">        List&lt;String&gt; continentList = countriesList.stream().map(AirportManagerImpl::splitContinents).distinct().sorted().collect(Collectors.toList());</span>
+<span class="fc" id="L152">        logger.debug(CLASSNAME, methodName, &quot;Total Continents : {}&quot;, continentList.size());</span>
+<span class="fc" id="L153">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L154">        return continentList;</span>
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List&lt;String&gt; listCountries() throws IOException {
-<span class="fc" id="L122">        String methodName = &quot;listCountries()&quot;;</span>
-<span class="fc" id="L123">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L124">        List&lt;String&gt; countriesList = Files.readString(Paths</span>
-<span class="fc" id="L125">                .get(PropertyHelper.getProperty(&quot;COUNTRIES_CSV_LOCATION&quot;)))</span>
-<span class="fc" id="L126">                .lines().collect(Collectors.toList());</span>
-<span class="fc" id="L127">        logger.debug(CLASSNAME, methodName, &quot;Total Countries : {}&quot;, countriesList.size());</span>
-<span class="fc" id="L128">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L129">        return countriesList;</span>
+<span class="fc" id="L164">        String methodName = &quot;listCountries()&quot;;</span>
+<span class="fc" id="L165">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L166">        List&lt;String&gt; countriesList = Files.readString(Paths</span>
+<span class="fc" id="L167">                .get(PropertyHelper.getProperty(&quot;COUNTRIES_CSV_LOCATION&quot;)))</span>
+<span class="fc" id="L168">                .lines().collect(Collectors.toList());</span>
+<span class="fc" id="L169">        logger.debug(CLASSNAME, methodName, &quot;Total Countries : {}&quot;, countriesList.size());</span>
+<span class="fc" id="L170">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L171">        return countriesList;</span>
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     public List&lt;String&gt; listAllRegions() throws IOException {
-<span class="fc" id="L133">        String methodName = &quot;listAllRegions()&quot;;</span>
-<span class="fc" id="L134">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L135">        List&lt;String&gt; regionList = Files.readString(Paths</span>
-<span class="fc" id="L136">                .get(PropertyHelper.getProperty(&quot;REGION_CSV_LOCATION&quot;)))</span>
-<span class="fc" id="L137">                .lines().collect(Collectors.toList());</span>
-<span class="fc" id="L138">        logger.debug(CLASSNAME, methodName, &quot;Total Regions : {}&quot;, regionList.size());</span>
-<span class="fc" id="L139">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L140">        return regionList;</span>
+<span class="fc" id="L180">        String methodName = &quot;listAllRegions()&quot;;</span>
+<span class="fc" id="L181">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L182">        List&lt;String&gt; regionList = Files.readString(Paths</span>
+<span class="fc" id="L183">                .get(PropertyHelper.getProperty(&quot;REGION_CSV_LOCATION&quot;)))</span>
+<span class="fc" id="L184">                .lines().collect(Collectors.toList());</span>
+<span class="fc" id="L185">        logger.debug(CLASSNAME, methodName, &quot;Total Regions : {}&quot;, regionList.size());</span>
+<span class="fc" id="L186">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L187">        return regionList;</span>
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     */
     @Override
     public List&lt;String&gt; listNavaids() throws IOException {
-<span class="fc" id="L145">        String methodName = &quot;listNavaids()&quot;;</span>
-<span class="fc" id="L146">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
-<span class="fc" id="L147">        List&lt;String&gt; navaidsList = Files.readString(Paths</span>
-<span class="fc" id="L148">                .get(PropertyHelper.getProperty(&quot;NAVAIDS_CSV_LOCATION&quot;)))</span>
-<span class="fc" id="L149">                .lines().collect(Collectors.toList());</span>
-<span class="fc" id="L150">        logger.debug(CLASSNAME, methodName, &quot;Total Navigation Aids : {}&quot;, navaidsList.size());</span>
-<span class="fc" id="L151">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
-<span class="fc" id="L152">        return navaidsList;</span>
+<span class="fc" id="L197">        String methodName = &quot;listNavaids()&quot;;</span>
+<span class="fc" id="L198">        logger.debug(CLASSNAME, methodName, METHODSTARTMSG);</span>
+<span class="fc" id="L199">        List&lt;String&gt; navaidsList = Files.readString(Paths</span>
+<span class="fc" id="L200">                .get(PropertyHelper.getProperty(&quot;NAVAIDS_CSV_LOCATION&quot;)))</span>
+<span class="fc" id="L201">                .lines().collect(Collectors.toList());</span>
+<span class="fc" id="L202">        logger.debug(CLASSNAME, methodName, &quot;Total Navigation Aids : {}&quot;, navaidsList.size());</span>
+<span class="fc" id="L203">        logger.debug(CLASSNAME, methodName, METHODENDMSG);</span>
+<span class="fc" id="L204">        return navaidsList;</span>
     }
 
+    /**
+     *
+     * @param airport
+     * @return boolean
+     */
     public static boolean heliport(String airport){
-<span class="fc" id="L156">        return airport.contains(AirportType.HELIPORT.getValue());</span>
+<span class="fc" id="L213">        return airport.contains(AirportType.HELIPORT.getValue());</span>
     }
 
+    /**
+     *
+     * @param s
+     * @return String
+     */
     public static String splitContinents(String s){
-<span class="fc" id="L160">        String[] arr = s.split(&quot;,&quot;);</span>
-<span class="fc" id="L161">        return arr[3].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L222">        String[] arr = s.split(&quot;,&quot;);</span>
+<span class="fc" id="L223">        return arr[3].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
     }
 
+    /**
+     *
+     * @param airports
+     * @param function
+     * @return List
+     */
     public List&lt;String&gt; getListByFunction(List&lt;String&gt; airports, String function) {
-<span class="fc" id="L165">        return airports.stream().filter(airport-&gt;airport.contains(function))</span>
-<span class="fc" id="L166">                .collect(Collectors.toList());</span>
+<span class="fc" id="L233">        return airports.stream().filter(airport-&gt;airport.contains(function))</span>
+<span class="fc" id="L234">                .collect(Collectors.toList());</span>
     }
 
+    /**
+     *
+     * @return List
+     * @throws IOException
+     * @throws URISyntaxException
+     * @throws InterruptedException
+     */
     public static List&lt;String&gt; readAirportData() throws IOException, URISyntaxException, InterruptedException {
-<span class="fc" id="L170">        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty(&quot;AIRPORTS_CSV_LOCATION&quot;)))</span>
-<span class="fc" id="L171">                .GET()</span>
-<span class="fc" id="L172">                .timeout(Duration.ofMinutes(1))</span>
-<span class="fc" id="L173">                .build();</span>
-<span class="fc" id="L174">        HttpResponse&lt;String&gt; response = HttpClient.newHttpClient()</span>
-<span class="fc" id="L175">                .send(request, HttpResponse.BodyHandlers.ofString());</span>
+<span class="fc" id="L245">        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty(&quot;AIRPORTS_CSV_LOCATION&quot;)))</span>
+<span class="fc" id="L246">                .GET()</span>
+<span class="fc" id="L247">                .timeout(Duration.ofMinutes(1))</span>
+<span class="fc" id="L248">                .build();</span>
+<span class="fc" id="L249">        HttpResponse&lt;String&gt; response = HttpClient.newHttpClient()</span>
+<span class="fc" id="L250">                .send(request, HttpResponse.BodyHandlers.ofString());</span>
 
-<span class="fc" id="L177">        BufferedReader reader = new BufferedReader(new StringReader(response.body()));</span>
-<span class="fc" id="L178">        String line = &quot;&quot;;</span>
-<span class="fc" id="L179">        List&lt;String&gt; airports = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L180" title="All 2 branches covered.">        while((line = reader.readLine()) != null){</span>
-<span class="fc" id="L181">            airports.add(line.replace(&quot;\&quot;&quot;, &quot;&quot;));</span>
+<span class="fc" id="L252">        BufferedReader reader = new BufferedReader(new StringReader(response.body()));</span>
+<span class="fc" id="L253">        String line = &quot;&quot;;</span>
+<span class="fc" id="L254">        List&lt;String&gt; airports = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L255" title="All 2 branches covered.">        while((line = reader.readLine()) != null){</span>
+<span class="fc" id="L256">            airports.add(line.replace(&quot;\&quot;&quot;, &quot;&quot;));</span>
         }
-<span class="fc" id="L183">        return airports;</span>
+<span class="fc" id="L258">        return airports;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

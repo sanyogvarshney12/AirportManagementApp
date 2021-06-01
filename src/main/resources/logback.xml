@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration debug="true">
+<configuration debug="false">
     <property name="LOG_LOCATION" value="C:/AirportManagementApp/logs" />
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -25,7 +25,7 @@
         </RollingPolicy>
     </appender>
 
-    <logger name="com.airport" level="DEBUG" additivity="false">
+    <logger name="com.airport" level="INFO" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>

@@ -2,15 +2,26 @@
 
 import com.airport.logger.ApplicationLogger;
 
-<span class="nc" id="L5">public class AirportsDataDownloader {</span>
+/**
+ * @author Sanyog Varshney
+ * @since 1.0
+ * @version 1.0
+ */
+<span class="nc" id="L10">public class AirportsDataDownloader {</span>
 
-<span class="nc" id="L7">    private static final ApplicationLogger LOGGER = new ApplicationLogger();</span>
+<span class="nc" id="L12">    private static final ApplicationLogger LOGGER = new ApplicationLogger();</span>
     //Using Java11 features
+
+    /**
+     *
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-<span class="nc" id="L10">        LOGGER.debug(AirportsDataDownloader.class.getName(),&quot;main&quot;, &quot;Welcome&quot;);</span>
-<span class="nc" id="L11">        IAirportService service = new AirportManagerImpl();</span>
-<span class="nc" id="L12">        service.listAllAirports();</span>
-<span class="nc" id="L13">    }</span>
+<span class="nc" id="L21">        LOGGER.debug(AirportsDataDownloader.class.getName(),&quot;main&quot;, &quot;Welcome&quot;);</span>
+<span class="nc" id="L22">        IAirportService service = new AirportManagerImpl();</span>
+<span class="nc" id="L23">        service.listAllAirports();</span>
+<span class="nc" id="L24">    }</span>
 
 
 

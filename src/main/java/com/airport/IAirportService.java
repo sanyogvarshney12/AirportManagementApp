@@ -21,5 +21,6 @@ public interface IAirportService {
     public List<String> listCountries() throws IOException;
     public List<String> listAllRegions() throws IOException;
     public List<String> listNavaids() throws IOException;
+    public String randomAirport(List<String> airports);
 
 }

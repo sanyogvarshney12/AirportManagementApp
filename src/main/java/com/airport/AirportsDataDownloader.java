@@ -2,6 +2,8 @@ package com.airport;
 
 import com.airport.logger.ApplicationLogger;
 
+import java.util.List;
+
 /**
  * @author Sanyog Varshney
  * @since 1.0
@@ -20,7 +22,9 @@ public class AirportsDataDownloader {
     public static void main(String[] args) throws Exception {
         LOGGER.debug(AirportsDataDownloader.class.getName(),"main", "Welcome");
         IAirportService service = new AirportManagerImpl();
-        service.listAllAirports();
+        //service.listAllAirports();
+        List<String> list = AirportManagerImpl.readAirportData();
+        service.randomAirport(list);
     }
 
 

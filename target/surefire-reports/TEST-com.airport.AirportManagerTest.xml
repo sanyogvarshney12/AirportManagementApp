@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="18" failures="6" name="com.airport.AirportManagerTest" time="8.945" errors="0" skipped="0">
+<testsuite tests="18" failures="6" name="com.airport.AirportManagerTest" time="8.053" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.8+10-LTS"/>
@@ -66,11 +66,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.airport.AirportManagerTest" name="testListCountries" time="0.603"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testGetRandomAirport" time="0.004">
+  <testcase classname="com.airport.AirportManagerTest" name="testListCountries" time="0.776"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testGetRandomAirport" time="0.007">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testGetRandomAirport(AirportManagerTest.java:149)
+	at com.airport.AirportManagerTest.testGetRandomAirport(AirportManagerTest.java:170)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,7 +110,7 @@ Executing before test
   <testcase classname="com.airport.AirportManagerTest" name="testLogin" time="0.001">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testLogin(AirportManagerTest.java:170)
+	at com.airport.AirportManagerTest.testLogin(AirportManagerTest.java:200)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,12 +147,12 @@ Executing before test
 Executing before test
 </system-out>
   </testcase>
-  <testcase classname="com.airport.AirportManagerTest" name="testListAllRegions" time="0.032"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testListAllNavaids" time="0.049"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testListAllRegions" time="0.039"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testListAllNavaids" time="0.11"/>
   <testcase classname="com.airport.AirportManagerTest" name="testListAll" time="0.002">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testListAll(AirportManagerTest.java:144)
+	at com.airport.AirportManagerTest.testListAll(AirportManagerTest.java:165)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -189,11 +189,11 @@ Executing before test
 Executing before test
 </system-out>
   </testcase>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByName" time="0.002"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsBySize" time="0.001">
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByName" time="0.001"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsBySize" time="0.002">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsBySize(AirportManagerTest.java:84)
+	at com.airport.AirportManagerTest.testFindAirportsBySize(AirportManagerTest.java:97)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -230,13 +230,13 @@ Executing before test
 Executing before test
 </system-out>
   </testcase>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByType" time="0.001"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByCountry" time="0.001"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByType" time="0.002"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByCountry" time="0.005"/>
   <testcase classname="com.airport.AirportManagerTest" name="testFindHelipads" time="0.002"/>
   <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByRunways" time="0.002">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testFindAirportsByRunways(AirportManagerTest.java:89)
+	at com.airport.AirportManagerTest.testFindAirportsByRunways(AirportManagerTest.java:102)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -273,14 +273,14 @@ Executing before test
 Executing before test
 </system-out>
   </testcase>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByContinent_Exception" time="0.004"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testListContinents" time="0.006"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByContinent_Exception" time="0.006"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testListContinents" time="0.009"/>
   <testcase classname="com.airport.AirportManagerTest" name="testFindHelipads_Exception" time="0.001"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByContinent" time="0.001"/>
-  <testcase classname="com.airport.AirportManagerTest" name="testSignup" time="0.001">
+  <testcase classname="com.airport.AirportManagerTest" name="testFindAirportsByContinent" time="0.004"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testSignup" time="0.002">
     <failure message="Not Yet Impemented" type="java.lang.AssertionError">java.lang.AssertionError: Not Yet Impemented
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.airport.AirportManagerTest.testSignup(AirportManagerTest.java:175)
+	at com.airport.AirportManagerTest.testSignup(AirportManagerTest.java:205)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -317,5 +317,5 @@ Executing before test
 Executing before test
 </system-out>
   </testcase>
-  <testcase classname="com.airport.AirportManagerTest" name="testListAllAirports" time="8.232"/>
+  <testcase classname="com.airport.AirportManagerTest" name="testListAllAirports" time="7.082"/>
 </testsuite>

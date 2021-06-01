@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
@@ -202,6 +203,13 @@ public class AirportManagerImpl implements IAirportService{
         logger.debug(CLASSNAME, methodName, "Total Navigation Aids : {}", navaidsList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return navaidsList;
+    }
+
+    @Override
+    public String randomAirport(List<String> airports) {
+        Random random = new Random();
+        String randomAirport = airports.get(random.nextInt(airports.size()));
+        return randomAirport;
     }
 
     /**
