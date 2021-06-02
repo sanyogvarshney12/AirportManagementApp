@@ -1,2 +1,23 @@
 2021-06-02 00:23:40 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
 2021-06-02 00:23:40 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:31:26 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:31:26 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:34:33 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:34:33 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:38:19 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:38:19 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:40:53 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:41:12 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:43:27 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:43:37 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 21:44:29 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 21:46:12 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 22:21:07 [INFO ] - com.airport.db.AirportsInMemoryDB - Airports Database Loaded with 65340 records
+2021-06-02 22:21:07 [INFO ] - com.airport.db.AirportsInMemoryDB - Regions Database Loaded with 3963 records
+2021-06-02 22:21:07 [INFO ] - com.airport.db.AirportsInMemoryDB - Countries Database Loaded with 247 records
+2021-06-02 22:21:08 [INFO ] - com.airport.db.AirportsInMemoryDB - NavAids Database Loaded with 11021 records
+2021-06-02 22:21:08 [INFO ] - c.a.main.AirportsApplicationMain - small_airport
+2021-06-02 22:24:34 [INFO ] - com.airport.db.AirportsInMemoryDB - Airports Database Loaded with 65340 records
+2021-06-02 22:24:34 [INFO ] - com.airport.db.AirportsInMemoryDB - Regions Database Loaded with 3963 records
+2021-06-02 22:24:34 [INFO ] - com.airport.db.AirportsInMemoryDB - Countries Database Loaded with 247 records
+2021-06-02 22:24:34 [INFO ] - com.airport.db.AirportsInMemoryDB - NavAids Database Loaded with 11021 records
