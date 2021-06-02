@@ -1,7 +1,7 @@
 organization=sanyogvarshney12
 projectKey=AirportManagementApp
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.20494
+serverVersion=8.0.0.20583
 dashboardUrl=https://sonarcloud.io/dashboard?id=AirportManagementApp
-ceTaskId=AXm-bMycEWSx6mqOjdQl
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXm-bMycEWSx6mqOjdQl
+ceTaskId=AXnI8TnIEksREWr21M3A
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXnI8TnIEksREWr21M3A

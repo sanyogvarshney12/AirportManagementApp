@@ -1,8 +1,14 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 AirportManagementApp,com.airport.exception,NoAirportsFoundForContinentException,0,4,0,0,0,2,0,1,0,1
 AirportManagementApp,com.airport.exception,NoHeliportFoundException,0,4,0,0,0,2,0,1,0,1
-AirportManagementApp,com.airport,AirportManagerImpl,0,445,0,6,0,97,0,20,0,17
-AirportManagementApp,com.airport,AirportsDataDownloader,22,0,0,0,6,0,3,0,3,0
+AirportManagementApp,com.airport,AirportManagerImpl,14,445,0,6,3,97,1,20,1,17
+AirportManagementApp,com.airport,AirportsDataDownloader,25,0,0,0,7,0,3,0,3,0
+AirportManagementApp,com.airport.events,Task,55,0,2,0,14,0,3,0,2,0
+AirportManagementApp,com.airport.events,DataConsumerImpl,101,0,4,0,29,0,6,0,4,0
+AirportManagementApp,com.airport.events,DataLoader,17,0,0,0,5,0,2,0,2,0
+AirportManagementApp,com.airport.events,DataConsumerImpl.Consumer,26,0,0,0,11,0,3,0,3,0
+AirportManagementApp,com.airports.concurrency,CustomThreadPool,22,0,0,0,9,0,3,0,3,0
+AirportManagementApp,com.airports.concurrency,CustomThreadPool.BlockingQueueDemo,48,0,8,0,14,0,7,0,3,0
+AirportManagementApp,com.airport.helper,PropertyHelper,15,27,1,1,6,10,2,2,1,2
 AirportManagementApp,com.airport.logger,ApplicationLogger,6,49,0,0,2,6,1,3,1,3
 AirportManagementApp,com.airport.constants,AirportType,0,92,0,0,0,12,0,3,0,3
-AirportManagementApp,com.airport.helper,PropertyHelper,15,27,1,1,6,10,2,2,1,2

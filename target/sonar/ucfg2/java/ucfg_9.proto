@@ -1,147 +1,105 @@
 
-<com.airport.AirportManagerImpl#listNavaids()Ljava/util/List;n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÄ Ä(#"1*÷(
-1n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÅ Å(+¬
-©
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÅ Å(,
+1com.airport.AirportManagerImpl#listAllAirports()Il
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java0 0("1*œ
+1l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java1 1(/®
+«
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java1 1(0
 
-methodNamejava.lang.String"__id*
-listNavaids()Õ
-Ò
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÆ Æ(*
-%0$com.airport.logger.ApplicationLogger"__id*.*, 
-com.airport.AirportManagerImpl"
-logger™
-–
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÆ Æ(
+methodNamejava.lang.String"__id*
+listAllAirports()—
+”
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java2 2(
+%0org.slf4j.Logger"__id*
+""—
+”
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java2 2(
 %1java.lang.String"__id*
-""™
-–
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÆ, Æ(:
+""—
+”
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java2) 2(7
 %2java.lang.String"__id*
-""§¤
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÆ Æ(;
+""ýú
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java2 2(8
 
-%3void"ccom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V*,
-*
-%0$com.airport.logger.ApplicationLogger*
+%3void"Oorg.slf4j.Logger#debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V*
+
+%0org.slf4j.Logger*
 
 %1java.lang.String* 
 
 
 methodNamejava.lang.String*
 
-%2java.lang.String2=debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)¡
-ž
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÈ È(G
-%4java.lang.String"Scom.airport.helper.PropertyHelper#getProperty(Ljava/lang/String;)Ljava/lang/String;*%"#
-!com.airport.helper.PropertyHelper*
-NAVAIDS_CSV_LOCATION”
-‘
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÇ4 È(H
-%5java.nio.file.Path"Rjava.nio.file.Paths#get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;*"
-java.nio.file.Paths*
-
-%4java.lang.Stringˆ
-…
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÇ# È(I
-%6java.lang.String"Fjava.nio.file.Files#readString(Ljava/nio/file/Path;)Ljava/lang/String;*"
-java.nio.file.Files*
-
-%5java.nio.file.Pathèå
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÇ# É(
-%7java.util.stream.Stream"1java.lang.String#lines()Ljava/util/stream/Stream;*
-
-%6java.lang.String2lines()ø
-õ
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÉ! É(4 
-%8java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*"
-java.util.stream.CollectorsÆÃ
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÇ# É(5
-%9java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*
-
-%7java.util.stream.Stream*"
- 
-%8java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)°
-­
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÇ É(6
-navaidsListjava.util.List"__id*
+%2java.lang.String2=debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)í
+ê
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java3 3(-
+%4java.util.List"@com.airport.AirportManagerImpl#readAirportData()Ljava/util/List;*"" 
+com.airport.AirportManagerImpl´±
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java3 3(4	
+%5int"java.util.List#size()I*
 
-%9java.util.ListÖ
-Ó
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÊ Ê(+
-%10$com.airport.logger.ApplicationLogger"__id*.*, 
+%4java.util.List2size()Ó
+Ð
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java4 4(*
+%6$com.airport.logger.ApplicationLogger"__id*.*, 
 com.airport.AirportManagerImpl"
-loggerš
-—
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÊ Ê(
-%11java.lang.String"__id*
-""À½
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÊJ Ê(\
+logger—
+”
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java4 4(
+%7java.lang.String"__id*
+""ãà
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java4 4(d
 
-%12int"java.util.List#size()I*
-
-navaidsListjava.util.List2size()âß
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÊ Ê(]
-%13void"ucom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V*-
-+
-%10$com.airport.logger.ApplicationLogger*
-
-%11java.lang.String* 
+%8void"ucom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V*,
+*
+%6$com.airport.logger.ApplicationLogger*
+
+%7java.lang.String* 
 
 
-methodNamejava.lang.String*
-Total Navigation Aids : {}*
-
-
-%12int2Odebug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ö
-Ó
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaË Ë(+
-%14$com.airport.logger.ApplicationLogger"__id*.*, 
+methodNamejava.lang.String**(
+&For people who fly: {} and counting...*
+""2Odebug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ó
+Ð
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java5 5(*
+%9$com.airport.logger.ApplicationLogger"__id*.*, 
 com.airport.AirportManagerImpl"
-loggerš
-—
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaË Ë(
-%15java.lang.String"__id*
-""š
-—
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaË, Ë(8
-%16java.lang.String"__id*
-""«¨
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaË Ë(9
-%17void"ccom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V*-
-+
-%14$com.airport.logger.ApplicationLogger*
+logger˜
+•
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java5 5(
+%10java.lang.String"__id*
+""˜
+•
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java5, 5(8
+%11java.lang.String"__id*
+""¨¥
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java5 5(9
+%12void"ccom.airport.logger.ApplicationLogger#debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V*,
+*
+%9$com.airport.logger.ApplicationLogger*
 
-%15java.lang.String* 
+%10java.lang.String* 
 
 
 methodNamejava.lang.String*
 
-%16java.lang.String2=debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)"‘
-n
-bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.javaÌ Ì(
-
-navaidsListjava.util.ListB" 
+%11java.lang.String2=debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)"v
+l
+bC:/Users/sanyo/IdeaProjects/AirportManagementApp/src/main/java/com/airport/AirportManagerImpl.java6 6(
+""B" 
 com.airport.AirportManagerImpl

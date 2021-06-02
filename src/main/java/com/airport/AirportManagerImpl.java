@@ -18,6 +18,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +35,19 @@ public class AirportManagerImpl implements IAirportService{
 
     private static final String CLASSNAME = AirportManagerImpl.class.getName();
     private static final Logger log = LoggerFactory.getLogger(AirportManagerImpl.class);
-    private final ApplicationLogger logger = new ApplicationLogger();
+    private static final ApplicationLogger logger = new ApplicationLogger();
     private static final String METHODSTARTMSG = "***** Method Started *****";
     private static final String METHODENDMSG = "***** Method Ended *****";
 
+    private static Random random;
+
+    static {
+        try {
+            random = SecureRandom.getInstanceStrong();
+        } catch (NoSuchAlgorithmException e) {
+            logger.error("error", e);
+        }
+    }
 
     /**
      *
@@ -207,9 +218,7 @@ public class AirportManagerImpl implements IAirportService{
 
     @Override
     public String randomAirport(List<String> airports) {
-        Random random = new Random();
-        String randomAirport = airports.get(random.nextInt(airports.size()));
-        return randomAirport;
+       return airports.get(random.nextInt());
     }
 
     /**

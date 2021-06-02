@@ -1,7 +1,8 @@
 package com.airport.events;
 
+import ch.qos.logback.classic.Logger;
 import com.airport.helper.PropertyHelper;
-import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class DataLoader {
 }
 
 class Task extends TimerTask {
-    private final Logger logger = LoggerFactory.getLogger(Task.class);
+    private final Logger logger = (ch.qos.logback.classic.Logger)LoggerFactory.getLogger(TimerTask.class);
     long time = 0;
     @Override
     public void run() {

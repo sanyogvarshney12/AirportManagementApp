@@ -1,0 +1,2 @@
+2021-06-02 00:23:40 [ERROR] - com.airport.db.AirportsInMemoryDB - Index 13 out of bounds for length 13
+2021-06-02 00:23:40 [INFO ] - c.a.main.AirportsApplicationMain - small_airport

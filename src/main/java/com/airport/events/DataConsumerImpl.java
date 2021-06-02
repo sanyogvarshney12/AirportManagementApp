@@ -33,8 +33,10 @@ public class DataConsumerImpl implements IDataConsumer {
         if(count == 0){
             throw new FileNotFoundException();
         }
-        int n = calculateProcessingTime(count);
-
+        long time = 100; //100ms time constraint to finish all tasks
+        long timeToExecuteSingleFile = 5; // 5ms time to process a file
+        long file = count; // 10 files to process
+        int n = (int)((timeToExecuteSingleFile * count)/time);
         logger.info("Total No of Threads : "+n);
         logger.info("Total No of Files : "+count);
         ExecutorService service = Executors.newFixedThreadPool(n);
@@ -48,14 +50,6 @@ public class DataConsumerImpl implements IDataConsumer {
             logger.info("Service Terminated");
         }
         service.shutdownNow();
-    }
-
-    private int calculateProcessingTime(long count) {
-        long time = 100; //100ms time constraint to finish all tasks
-        long timeToExecuteSingleFile = 5; // 5ms time to process a file
-        long file = count; // 10 files to process
-        int n = (int)((timeToExecuteSingleFile * count)/time);
-        return n;
     }
 
     public static class Consumer implements Runnable {
