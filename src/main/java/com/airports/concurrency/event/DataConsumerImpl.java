@@ -34,13 +34,13 @@ public class DataConsumerImpl implements IDataConsumer{
         }
         int n = calculateProcessingTime(count);
 
-        logger.info("Total No of Threads : "+n);
-        logger.info("Total No of Files : "+count);
+        logger.info("Total No of Threads : ",n);
+        logger.info("Total No of Files : ",count);
         ExecutorService service = Executors.newFixedThreadPool(n);
         Runnable cons = new Consumer(supp);
-        logger.info("Task execution started : "+System.currentTimeMillis());
+        logger.info("Task execution started : ",System.currentTimeMillis());
         service.execute(cons);
-        logger.info("Task execution started : "+System.currentTimeMillis());
+        logger.info("Task execution started : {}",System.currentTimeMillis());
         if(!service.isTerminated()){
             service.awaitTermination(10000, TimeUnit.MILLISECONDS);
         }else{
@@ -52,7 +52,6 @@ public class DataConsumerImpl implements IDataConsumer{
     private int calculateProcessingTime(long count) {
         long time = 100; //100ms time constraint to finish all tasks
         long timeToExecuteSingleFile = 5; // 5ms time to process a file
-        long file = count; // 10 files to process
         int n = (int)((timeToExecuteSingleFile * count)/time);
         return n;
     }
@@ -69,7 +68,6 @@ public class DataConsumerImpl implements IDataConsumer{
                 try {
                     Files.readString(s).lines().sorted();
                     Files.deleteIfExists(s);
-                    //Thread.sleep(1000);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

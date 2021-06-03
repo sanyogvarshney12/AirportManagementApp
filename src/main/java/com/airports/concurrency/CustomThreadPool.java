@@ -18,7 +18,7 @@ public class CustomThreadPool {
     }
 
     static class BlockingQueueDemo {
-        List queue = new LinkedList<>();
+        List<Object> queue = new LinkedList<>();
 
         public synchronized void enqueue(Object item) throws InterruptedException {
             if (queue.size() == 10) {
