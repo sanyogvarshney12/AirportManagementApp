@@ -157,7 +157,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listContinents()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> countriesList = Files.readString(Paths
-                .get(PropertyHelper.getProperty("COUNTRIES_CSV_LOCATION")))
+                .get(PropertyHelper.getProperty("COUNTRIES_CSV")))
                 .lines().collect(Collectors.toList());
         countriesList.remove(0);
         List<String> continentList = countriesList.stream().map(AirportManagerImpl::splitContinents).distinct().sorted().collect(Collectors.toList());
@@ -176,7 +176,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listCountries()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> countriesList = Files.readString(Paths
-                .get(PropertyHelper.getProperty("COUNTRIES_CSV_LOCATION")))
+                .get(PropertyHelper.getProperty("COUNTRIES_CSV")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Countries : {}", countriesList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -192,7 +192,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listAllRegions()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> regionList = Files.readString(Paths
-                .get(PropertyHelper.getProperty("REGION_CSV_LOCATION")))
+                .get(PropertyHelper.getProperty("REGIONS_CSV")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Regions : {}", regionList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -209,7 +209,7 @@ public class AirportManagerImpl implements IAirportService{
         String methodName = "listNavaids()";
         logger.debug(CLASSNAME, methodName, METHODSTARTMSG);
         List<String> navaidsList = Files.readString(Paths
-                .get(PropertyHelper.getProperty("NAVAIDS_CSV_LOCATION")))
+                .get(PropertyHelper.getProperty("NAVAIDS_CSV")))
                 .lines().collect(Collectors.toList());
         logger.debug(CLASSNAME, methodName, "Total Navigation Aids : {}", navaidsList.size());
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
@@ -259,7 +259,7 @@ public class AirportManagerImpl implements IAirportService{
      * @throws InterruptedException
      */
     public static List<String> readAirportData() throws IOException, URISyntaxException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty("AIRPORTS_CSV_LOCATION")))
+        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty("AIRPORTS_CSV")))
                 .GET()
                 .timeout(Duration.ofMinutes(1))
                 .build();
