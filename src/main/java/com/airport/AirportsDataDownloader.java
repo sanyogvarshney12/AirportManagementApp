@@ -22,9 +22,7 @@ public class AirportsDataDownloader {
     public static void main(String[] args) throws Exception {
         LOGGER.debug(AirportsDataDownloader.class.getName(),"main", "Welcome");
         IAirportService service = new AirportManagerImpl();
-        //service.listAllAirports();
-        List<String> list = AirportManagerImpl.readAirportData();
-        service.randomAirport(list);
+        service.listAllAirports();
     }
 
 

@@ -59,7 +59,7 @@ public class AirportManagerImpl implements IAirportService{
     public int listAllAirports() throws IOException, URISyntaxException, InterruptedException {
         String methodName = "listAllAirports()";
         log.debug(CLASSNAME, methodName, METHODSTARTMSG);
-        int totalAirports = readAirportData().size();
+        int totalAirports = Files.readAllLines(Paths.get(PropertyHelper.getProperty("AIRPORTS_CSV"))).size();
         logger.debug(CLASSNAME, methodName, "For people who fly: {} and counting...", totalAirports);
         logger.debug(CLASSNAME, methodName, METHODENDMSG);
         return totalAirports;
@@ -249,29 +249,5 @@ public class AirportManagerImpl implements IAirportService{
     public List<String> getListByFunction(List<String> airports, String function) {
         return airports.stream().filter(airport->airport.contains(function))
                 .collect(Collectors.toList());
-    }
-
-    /**
-     *
-     * @return List
-     * @throws IOException
-     * @throws URISyntaxException
-     * @throws InterruptedException
-     */
-    public static List<String> readAirportData() throws IOException, URISyntaxException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder(new URI(PropertyHelper.getProperty("AIRPORTS_CSV")))
-                .GET()
-                .timeout(Duration.ofMinutes(1))
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient()
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        BufferedReader reader = new BufferedReader(new StringReader(response.body()));
-        String line = "";
-        List<String> airports = new ArrayList<>();
-        while((line = reader.readLine()) != null){
-            airports.add(line.replace("\"", ""));
-        }
-        return airports;
     }
 }
